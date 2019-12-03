@@ -2,6 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b708fdc-8558-413e-aeb8-948ba38cddf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/_exceptions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/_mysql.cp37-win32.pyd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/compat.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/connections.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/CLIENT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/CR.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/ER.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/FIELD_TYPE.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/FLAG.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/constants/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/converters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/cursors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/release.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/MySQLdb/times.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/INSTALLER" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/METADATA" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/RECORD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/WHEEL" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lib/site-packages/mysqlclient-1.4.6.dist-info/top_level.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="37" selection-start-column="37" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -149,13 +179,13 @@
         <option value="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/main/settings.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/consulta/views.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/index.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/resultado.html" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/testemunhoweb/main/settings.py" />
       </list>
     </option>
   </component>
@@ -177,6 +207,11 @@
             <path>
               <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -290,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575333508337</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2019 12 02 21:45&#10;inclusao das paginas de consulta">
+      <created>1575333940332</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575333940332</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -305,19 +347,19 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2980333" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2980333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2487725" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2487725" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -354,7 +396,8 @@
     <MESSAGE value="2019 11 30" />
     <MESSAGE value="2019 12 02&#10;inclusao das paginas de consulta" />
     <MESSAGE value="2019 12 02 21:29&#10;inclusao das paginas de consulta" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019 12 02 21:29&#10;inclusao das paginas de consulta" />
+    <MESSAGE value="2019 12 02 21:45&#10;inclusao das paginas de consulta" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019 12 02 21:45&#10;inclusao das paginas de consulta" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/testemunhoweb/generate/urls.py" />
@@ -408,13 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="524" column="23" selection-start-line="524" selection-start-column="23" selection-end-line="524" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
         </state>
       </provider>
     </entry>
@@ -548,6 +584,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="37" selection-start-column="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
         </state>
       </provider>
     </entry>
