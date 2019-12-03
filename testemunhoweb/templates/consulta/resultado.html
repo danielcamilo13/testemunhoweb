@@ -1,0 +1,74 @@
+{% extends "../admin/base_site.html" %}
+{% load i18n static %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
+
+{%block content%}
+<head>
+<title>Testemunho Publico</title>
+</head>
+
+<div class="results">
+    <table id="result_list">
+        <thead>
+        <tr>
+            <td>Dia semana</td>
+            <td>Irmao</td>
+            <td>Estado Civil</td>
+            <td>Conjuge</td>
+            <td>Genero</td>
+            <td>Qte Maximo</td>
+            <td>Preferencial</td>
+            <td>Privilegio</td>
+            <td>Dianteira</td>
+            <td>P1</td>
+            <td>P1</td>
+            <td>P1</td>
+            <td>P2</td>
+            <td>P2</td>
+            <td>P3</td>
+            <td>P3</td>
+            <td>P4</td>
+            <td>P4</td>
+            <td>P5</td>
+            <td>P5</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td >{{ result.form.non_field_errors }}</td></tr>
+        {%for irmao in irmaos%}
+        <tr class="{% cycle 'row1' 'row2' %}">
+            <td>{{irmao.dia_semana}}</td>
+            <td>{{irmao.irmao__nm}}</td>
+            <td>{{irmao.irmao__estado_civil}}</td>
+            <td>{{irmao.irmao__conjuge}}</td>
+            <td>{{irmao.irmao__gr}}</td>
+            <td>{{irmao.irmao__maximo}}</td>
+            <td>{{irmao.preferencial}}</td>
+            <td>{{irmao.irmao__privilegio}}</td>
+            <td>{{irmao.irmao__dianteira}}</td>
+            <td>{{irmao.p1}}</td>
+            <td>{{irmao.p1_1}}</td>
+            <td>{{irmao.p1_2}}</td>
+            <td>{{irmao.p2}}</td>
+            <td>{{irmao.p2_1}}</td>
+            <td>{{irmao.p3}}</td>
+            <td>{{irmao.p3_1}}</td>
+            <td>{{irmao.p4}}</td>
+            <td>{{irmao.p4_1}}</td>
+            <td>{{irmao.p5}}</td>
+            <td>{{irmao.p5_1}}</td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+{%endblock%}
+{%block sidebar%}
+<div id="content-related">
+    <p>{{irmao.dia_semana}} - total de irmaos: {{irmaos.count}}</p>
+</div>
+{%endblock%}
+    {% block footer %}<div id="footer"></div>{% endblock %}
+{% block nav-global %}{% endblock %}

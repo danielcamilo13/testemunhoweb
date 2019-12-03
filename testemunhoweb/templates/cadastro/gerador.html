@@ -1,0 +1,51 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+    Voce esta trabalhando a partir do Terminal {{station}}
+    
+    <form action=" /cadastro/gerador/" method="post" novalidate>
+        {% csrf_token %}
+        <table>
+            <tr><td>
+                <input type="radio" name="mes" value="1" checked>Janeiro<br>
+                <input type="radio" name="mes" value="2">Fevereiro<br>
+                <input type="radio" name="mes" value="3">Março<br>
+                <input type="radio" name="mes" value="4">Abril<br>
+                <input type="radio" name="mes" value="5">Maio<br>
+                <input type="radio" name="mes" value="6">Junho<br>
+            </td>
+                <td>
+                    <input type="radio" name="mes" value="7">Julho<br>
+                    <input type="radio" name="mes" value="8">Agosto<br>
+                    <input type="radio" name="mes" value="9">Setembro<br>
+                    <input type="radio" name="mes" value="10">Outubro<br>
+                    <input type="radio" name="mes" value="11">Novembro<br>
+                    <input type="radio" name="mes" value="12">Dezembro<br>
+                </td></tr>
+            <tr><td>
+                <input type="text" name="ano" value={{ano}} size="5">
+            </td></tr>
+            <div>
+                <button type="search">Gerar Planilha</button>
+            </div>
+        </table>
+    </form>
+</div>
+{% endblock %}
+{% block sidebar %}
+<div id="content-related">
+    The sun doesn't reach it
+</div>
+{% endblock%}
+{%block footer%}
+<a href="{%url 'admin:index'%}">voltar </a>
+{%endblock%}

@@ -1,0 +1,37 @@
+{% extends "../admin/base_site.html" %}
+{% load i18n static %}
+
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <h1>Faça a pesquisa de irmãos disponiveis por dia</h1>
+    <table id="result_list">
+        <tr>
+    <form action="/admin/consulta/resultado/" method="post" novalidate>
+        {%csrf_token%}
+        <td><input type="radio" name="dia" value="Segunda-feira">Segunda-feira</td>
+        <td><input type="radio" name="dia" value="Terca-feira">Terca-feira</td>
+        <td><input type="radio" name="dia" value="Quarta-feira">Quarta-feira</td>
+        <td><input type="radio" name="dia" value="Quinta-feira">Quinta-feira</td>
+        <td><input type="radio" name="dia" value="Sexta-feira">Sexta-feira</td>
+        <td><input type="radio" name="dia" value="Sabado">Sabado-feira</td>
+        <td><input type="radio" name="dia" value="Domingo">Domingo</td>
+        <td><input type="submit" value="enviar"></td>
+
+    </form>
+        </tr>
+    </table>
+</div>
+{%endblock%}
+
+
+{%block sidebar%}
+<div id="content-related">
+    <p>conteudo relacionado</p>
+</div>
+{%endblock%}
+{% block nav-global %}{% endblock %}

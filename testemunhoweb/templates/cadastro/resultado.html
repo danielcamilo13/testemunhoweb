@@ -1,0 +1,42 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+{%block content%}
+{{mensagem}}
+<form method="post">
+
+    <table align="center" border="3">
+        <tr class="{% cycle 'row1' 'row2' %}">
+            <td>Mes</td><td>semana</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 2</td><td>Periodo 2</td>
+            <td>Periodo 3</td><td>Periodo 3</td><td>Periodo 4</td><td>Periodo 4</td>
+            <td>Periodo 5</td><td>Periodo 5</td>
+        </tr>
+        {%for dia_mes,dia_semana,p1,p1_1,p1_2,p2,p2_1,p3,p3_1,p4,p4_1,p5,p5_1 in lista_mes%}
+        <tr class="{% cycle 'row1' 'row2' 'row3'%}">
+            <td>{{dia_mes|last}}</td>
+            <td>{{dia_semana|last}}</td>
+            <td>{{p1|last}}</td>
+            <td>{{p1_1|last}}</td>
+            <td>{{p1_2|last}}</td>
+            <td>{{p2|last}}</td>
+            <td>{{p2_1|last}}</td>
+            <td>{{p3|last}}</td>
+            <td>{{p3_1|last}}</td>
+            <td>{{p4|last}}</td>
+            <td>{{p4_1|last}}</td>
+            <td>{{p5|last}}</td>
+            <td>{{p5_1|last}}</td>
+            {%endfor%}
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="send">
+</form>
+{%endblock%}
+{%block footer%}
+<a href="{%url 'admin:index'%}">voltar </a>
+{%endblock%}
