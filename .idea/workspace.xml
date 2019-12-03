@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b708fdc-8558-413e-aeb8-948ba38cddf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0039_irmaos_dtmodificado.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0040_auto_20191130_0335.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/migrations/0002_auto_20191202_0219.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/consulta/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/logs/Dezembro 2019.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/run.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/run.py" beforeDir="false" />
-    </list>
+    <list default="true" id="0b708fdc-8558-413e-aeb8-948ba38cddf7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +132,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/testemunhoweb" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -199,11 +182,6 @@
               <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -214,7 +192,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -295,7 +273,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2980333" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -340,6 +317,9 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/testemunhoweb" />
+    </ignored-roots>
     <MESSAGE value="2019 11 30" />
     <MESSAGE value="2019 12 02&#10;inclusao das paginas de consulta" />
     <option name="LAST_COMMIT_MESSAGE" value="2019 12 02&#10;inclusao das paginas de consulta" />
