@@ -1,4 +1,5 @@
-{% extends "admin/base.html" %}
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
@@ -7,7 +8,8 @@
 {% endblock %}
 {%block content%}
 {{mensagem}}
-<form method="post">
+<form method="post" action="{%url 'cadastro:planilha'%}">
+    {%csrf_token%}
 
     <table align="center" border="3">
         <tr class="{% cycle 'row1' 'row2' %}">
@@ -37,6 +39,8 @@
     <input type="submit" value="send">
 </form>
 {%endblock%}
+
+
 {%block footer%}
 <a href="{%url 'admin:index'%}">voltar </a>
 {%endblock%}

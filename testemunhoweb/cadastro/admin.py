@@ -74,4 +74,4 @@ class irmaoAdmin(admin.ModelAdmin):
 
 admin.site.register(irmaos,irmaoAdmin)
 admin.site.register(irmaosLista,irmaoAdminlist)
-admin.site.register(dias)
+# admin.site.register(dias)

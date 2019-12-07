@@ -69,11 +69,12 @@ class irmaos(models.Model):
         return str(self.nm)
     class Meta:
         verbose_name='Irmão'
-        # verbose_name_plural='Irmãos'
 
 class irmaosLista(irmaos):
     class Meta:
         proxy=True
+        verbose_name = 'Irmãos - listagem simple'
+
 
 class dias(models.Model):
     p = 'Par'

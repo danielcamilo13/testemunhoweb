@@ -16,8 +16,10 @@ def index(request):
     return render(request,'cadastro/gerador.html',{'ano':ano,'station':station})
 
 def generate(request):
-    BASE_DIR = os.path.join(os.getcwd(),'logs')
+    BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    BASE_DIR = os.path.join(BASE,'logs')
     f = open(os.path.join(BASE_DIR,'lista_mes.json'),'w')
+    list_mes = {}
     arqmes = {'campo':'nome'}
     mensagem = 'Mensagem de teste'
     external = sys.stdout
@@ -45,7 +47,6 @@ def generate(request):
             dia_semana = calendar.weekday(int(a), int(m), dia_mes)
             if dia_semana==0:
                 ds='Segunda-feira'
-                # localiza_dias(ds, dia_mes)
                 dia=filling_header()
                 dia['dia_mes']=dia_mes
                 dia['dia_semana']=ds
@@ -62,6 +63,14 @@ def generate(request):
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
+                list_mes[ds]='culinaria'
+                for l in lista_segunda.items():
+                    # list_mes[lista_segunda.keys()]=lista_segunda.values()
+                    print(' TESTANDO DICIONARIO %s'%lista_segunda.items())
+                    print(' TESTANDO DICIONARIO %s'%type(lista_segunda.items()))
+                print('LISTA DO MES %s'%type(list_mes))
+                print('LISTA DO MES %s'%list_mes)
 
             elif dia_semana==1:
                 ds='Terca-feira';print(ds)
@@ -81,6 +90,7 @@ def generate(request):
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
 
             elif dia_semana==2:
                 ds='Quarta-feira';print(ds)
@@ -100,6 +110,7 @@ def generate(request):
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
 
             elif dia_semana==3:
                 ds='Quinta-feira';print(ds)
@@ -119,6 +130,7 @@ def generate(request):
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
 
             elif dia_semana==4:
                 ds='Sexta-feira';print(ds)
@@ -136,6 +148,7 @@ def generate(request):
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
 
             elif dia_semana==5:
                 ds='Sabado';print(ds)
@@ -156,6 +169,7 @@ def generate(request):
                 swap_file(arqmes,lista_dia)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
+                # rec_dict(BASE_DIR, lista_mes)
     contagem_irmaos(lista_mes)
     arqmes.close()
     sys.stdout.close()
@@ -170,7 +184,7 @@ def generate(request):
     wsMes.cell(row=ultima_linha,column=3).value=rowdate
     wsMes.insert_rows(1,1)
     wsMes.merge_cells(start_row=1,start_column=1,end_row=1,end_column=3)
-    print(mes_nm)
+    # print(mes_nm)
     wsMes.cell(row=1,column=1).value=mes_nm
     wsMes.insert_rows(2,1)
     wsMes.cell(row=2,column=1).value='Dia Mes'
@@ -470,8 +484,16 @@ def grava_json(BASE_DIR,lista_mes):
     with open(os.path.join(BASE_DIR,'lista_mes.json'),'a') as f:
         json.dump(lista_mes,f)
 
+def rec_dict(BASE_DIR,lista_mes):
+    n = dict(lista_mes)
+    print('JSON - TESTES %s'%type(lista_mes))
+    print('JSON - TESTES %s'%lista_mes)
 def contagem_irmaos(lista_mes):
     for i in consulta_irmaos():
         print(type(lista_mes))
     p = len(lista_mes)
     print(p)
+def planilha(request):
+    retorno = {'contexto':'retorno'}
+    return render(request,'cadastro/planilha.html',{})
+    # HttpResponse(request,'cadastro/planilha.html',{'contexto':retorno})
