@@ -7,3 +7,7 @@ http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
 
 dicas de subir dados
 https://help.pythonanywhere.com/pages/MySQLBackupRestore
+
+definir form para exibir somente arquivo de extensão xls
+https://www.codeproject.com/Questions/763540/How-to-browse-only-xls-and-xlsx-file-in-html-file
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file

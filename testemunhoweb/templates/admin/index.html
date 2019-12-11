@@ -11,16 +11,46 @@
 
 {% block content %}
 <div id="content-main">
-    <table>
-        <caption>
-            <tr>
-                <td>
-                    <H1><a href="{% url 'cadastro:index' %}" >Clique aqui </a></H1> para gerar a planilha
-                </td>
+
+    <div class="app-{{ app.app_label }} module">
+        <table>
+            <caption>
+                <p>DESIGNAÇÕES</p>
+            </caption>
+            <tr class="model-{{ model.object_name|lower }}">
+
+                <th scope="row">Gerar</th>
+                <th scope="row"></th>
+
+                <td>Criar nova planilha</td>
+                <td>&nbsp;</td>
+                <td><a href="{% url 'cadastro:index' %}" class="addlink" >Gerar</a></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="model-{{ model.object_name|lower }}">
+
+                <th scope="row">Histórico</th>
+                <th scope="row"></th>
+
+                <td>Veja planilhas geradas</td>
+                <td>&nbsp;</td>
+                <td><a href=""class="changelink">Visualizar</a></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr class="model-{{ model.object_name|lower }}">
+
+                <th scope="row">Importar</th>
+                <th scope="row"></th>
+
+                <td>formato xlsx</td>
+                <td>&nbsp;</td>
+                <td><a href="{%url 'cadastro:importar'%}"class="changelink">Importar</a></td>
+                <td>&nbsp;</td>
             </tr>
 
-        </caption>
-    </table>
+        </table>
+    </div>
+
     {% if app_list %}
     {% for app in app_list %}
     <div class="app-{{ app.app_label }} module">

@@ -25,7 +25,7 @@ SECRET_KEY = 'o%2dk$sk%keeio3p7)m+m2#vu=tzbnbfn1&wv7*rdq(6m777^o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','carldarkmsn.pythonanywhere.com']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,7 +84,7 @@ DATABASES = {
     }
 }
 
-# MYSQL
+# MYSQL LOCAL
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -96,6 +96,17 @@ DATABASES = {
 #     }
 # }
 
+# MYSQL pythonanywhere
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'carldarkmsn$default',
+#         'USER': 'carldarkmsn',
+#         'PASSWORD': '@Drsct098',
+#         'HOST': 'carldarkmsn.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+#         'PORT': '3306',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

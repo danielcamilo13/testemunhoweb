@@ -7,4 +7,5 @@ urlpatterns =[
     path('gerador/',views.generate,name='gerador'),
     path('showing/',views.showing,name='showing'),
     path('planilha/',views.planilha,name='planilha'),
+    path('importar/',views.importar,name='importar')
 ]

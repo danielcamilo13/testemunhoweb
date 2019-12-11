@@ -8,7 +8,8 @@ from .models import irmaos,dias
 import json, csv
 from openpyxl.styles import fills,PatternFill,Border, Side, Alignment, Protection, Font, Color, colors
 from openpyxl import Workbook
-from .tratamento import tratamento
+from .tratamento import tratamento,spreadsheet_reader
+from django.core.files.storage import FileSystemStorage
 
 def index(request):
     station = request.META['REMOTE_ADDR']
@@ -30,6 +31,7 @@ def generate(request):
     wsMes = wbMes.active
     thin_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),bottom=Side(style='thin'))
     fill = PatternFill("solid", fgColor="DDDDDD")
+    mes_json = open(os.path.join(BASE_DIR,'file.json'),'w')
 
     if 'ano' in request.POST:
         a = str(request.POST['ano'])
@@ -65,12 +67,11 @@ def generate(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 list_mes[ds]='culinaria'
-                for l in lista_segunda.items():
+                for k,v in lista_segunda.items():
                     # list_mes[lista_segunda.keys()]=lista_segunda.values()
-                    print(' TESTANDO DICIONARIO %s'%lista_segunda.items())
-                    print(' TESTANDO DICIONARIO %s'%type(lista_segunda.items()))
-                print('LISTA DO MES %s'%type(list_mes))
-                print('LISTA DO MES %s'%list_mes)
+                    print(' TESTANDO DICIONARIO %s %s'%(k,v))
+                json.dump(lista_segunda,mes_json)
+                # print(json.loads(json_data))
 
             elif dia_semana==1:
                 ds='Terca-feira';print(ds)
@@ -91,6 +92,8 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
+                json.dump(lista_terca,mes_json)
+                # print(json.loads(json_data))
 
             elif dia_semana==2:
                 ds='Quarta-feira';print(ds)
@@ -111,6 +114,8 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
+                json_data = json.dump(lista_quarta,mes_json)
+                # print(json.loads(json_data))
 
             elif dia_semana==3:
                 ds='Quinta-feira';print(ds)
@@ -131,6 +136,8 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
+                json_data = json.dump(lista_quinta,mes_json)
+                # print(json.loads(json_data))
 
             elif dia_semana==4:
                 ds='Sexta-feira';print(ds)
@@ -149,6 +156,8 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
+                json_data = json.dump(lista_sexta,mes_json)
+                # print(json.loads(json_data))
 
             elif dia_semana==5:
                 ds='Sabado';print(ds)
@@ -170,6 +179,14 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
+                json_data = json.dump(lista_sabado,mes_json)
+                # print(json.loads(json_data))
+    mes_json = open(os.path.join(BASE_DIR,'file.json'),'r')
+    # data = json.loads(mes_json)
+
+    # print('JSON')
+    # for d in data:
+    #     print(d)
     contagem_irmaos(lista_mes)
     arqmes.close()
     sys.stdout.close()
@@ -484,10 +501,6 @@ def grava_json(BASE_DIR,lista_mes):
     with open(os.path.join(BASE_DIR,'lista_mes.json'),'a') as f:
         json.dump(lista_mes,f)
 
-def rec_dict(BASE_DIR,lista_mes):
-    n = dict(lista_mes)
-    print('JSON - TESTES %s'%type(lista_mes))
-    print('JSON - TESTES %s'%lista_mes)
 def contagem_irmaos(lista_mes):
     for i in consulta_irmaos():
         print(type(lista_mes))
@@ -496,4 +509,25 @@ def contagem_irmaos(lista_mes):
 def planilha(request):
     retorno = {'contexto':'retorno'}
     return render(request,'cadastro/planilha.html',{})
-    # HttpResponse(request,'cadastro/planilha.html',{'contexto':retorno})
+
+def importar(request):
+    # context={'valor1':'valor 1','valor2':'valor 2'}
+    context={}
+    leitor={}
+    fs = FileSystemStorage()
+    if request.method=='POST':
+        print('post enviado')
+        # print(request.body)
+        # print(request.FILES)
+        # print(request.META)
+        uploadFile=request.FILES['file_import']
+        name = fs.save(uploadFile.name, uploadFile)
+        leitor = spreadsheet_reader(uploadFile)
+        print('retorno do leitor %s'%leitor)
+        print('retorno do leitor %s'%type(leitor))
+        context = leitor
+        print(context)
+        print(type(context))
+        # print(name)
+        # context['url']=fs.url(name)
+    return render(request,'cadastro/importar.html',{'context':context})
