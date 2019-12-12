@@ -35,12 +35,16 @@
     <tbody>
     {%if context%}
     {%for lines in context%}
-    <tr><td colspan="{{ line|length }}">{{ line.form.non_field_errors }}</td></tr>
+    <form action="{%url 'cadastro:importar'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+    <tr><td colspan="{{ lines|length }}">{{ line.form.non_field_errors }}</td></tr>
     <tr class="{% cycle 'row1' 'row2' %}">
         {%for dia in lines %}
-        <td>{{dia}}</td>
-        {% endfor %}</tr>
-    {% endfor %}
+        <td>{{dia}} </td>
+        {% endfor %}
+    </tr>
+    {%endfor%}
+    </form>
     </tbody>
 </table>
 </div>

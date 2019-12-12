@@ -511,7 +511,6 @@ def planilha(request):
     return render(request,'cadastro/planilha.html',{})
 
 def importar(request):
-    # context={'valor1':'valor 1','valor2':'valor 2'}
     context={}
     leitor={}
     fs = FileSystemStorage()
@@ -523,11 +522,5 @@ def importar(request):
         uploadFile=request.FILES['file_import']
         name = fs.save(uploadFile.name, uploadFile)
         leitor = spreadsheet_reader(uploadFile)
-        print('retorno do leitor %s'%leitor)
-        print('retorno do leitor %s'%type(leitor))
         context = leitor
-        print(context)
-        print(type(context))
-        # print(name)
-        # context['url']=fs.url(name)
     return render(request,'cadastro/importar.html',{'context':context})
