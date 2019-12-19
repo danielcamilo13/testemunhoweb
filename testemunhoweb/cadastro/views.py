@@ -2,23 +2,34 @@
 from __future__ import unicode_literals
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
-import datetime
-import os, sys,openpyxl,datetime,re,calendar
-from .models import irmaos,dias
+import os, sys,openpyxl,re,calendar
+from datetime import datetime
+from .models import irmaos,dias,designacao
 import json, csv
 from openpyxl.styles import fills,PatternFill,Border, Side, Alignment, Protection, Font, Color, colors
 from openpyxl import Workbook
 from .tratamento import tratamento,spreadsheet_reader
 from django.core.files.storage import FileSystemStorage
+from django.core.serializers import serialize
 
 def index(request):
-    station = request.META['REMOTE_ADDR']
-    ano= datetime.date.today().year
-    return render(request,'cadastro/gerador.html',{'ano':ano,'station':station})
+    return 'index'
 
-def generate(request):
+def designar(request):
+    qs={}
+    hoje =datetime.now()
+    mes = hoje.strftime('%m')
+    ano = hoje.strftime('%Y')
+    qs = request.META['QUERY_STRING']
+    return render(request,'cadastro/designar.html',{'qs':qs,'hoje':hoje,'mes':mes,'ano':ano})
+
+
+def gerador(request):
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     BASE_DIR = os.path.join(BASE,'logs')
+    hoje = datetime.now()
+    d = hoje.strftime('%d')
+    qs = str(request.META['QUERY_STRING'])
     f = open(os.path.join(BASE_DIR,'lista_mes.json'),'w')
     list_mes = {}
     arqmes = {'campo':'nome'}
@@ -34,19 +45,20 @@ def generate(request):
     mes_json = open(os.path.join(BASE_DIR,'file.json'),'w')
 
     if 'ano' in request.POST:
-        a = str(request.POST['ano'])
-        m = str(request.POST['mes'])
-        mes_ext = datetime.datetime.strptime(m, '%m')
-        mes_nm = mes_ext.strftime('%B')
-        mensagem = mes_nm
-        planMes = os.path.join(BASE_DIR,mes_nm)+'.xlsx'
-        ultimo_dia = calendar.monthrange(int(a), int(m))[1]
+        # a = str(request.POST['ano'])
+        mes = int(request.POST['mes'])
+        mes_label = calendar.month_name[mes]
+        # mes_label = mes.strftime('%B')
+        planMes = os.path.join(BASE_DIR, mes_label) + '.xlsx'
+        # mes_ext = datetime.strptime(m,'%m')
+        mensagem = mes_label
+        ultimo_dia = calendar.monthrange(int(d), int(mes))[1]
         campos = [f.name for f in dias._meta.get_fields()][3:]
         expurgo_dia = []
         designado_dia = []
         lista_segunda = {}; lista_terca = {};lista_quarta ={};lista_quinta ={}; lista_sexta ={};lista_sabado ={}
         for dia_mes in range(1,ultimo_dia+1):
-            dia_semana = calendar.weekday(int(a), int(m), dia_mes)
+            dia_semana = calendar.weekday(int(d), int(mes), dia_mes)
             if dia_semana==0:
                 ds='Segunda-feira'
                 dia=filling_header()
@@ -70,7 +82,7 @@ def generate(request):
                 for k,v in lista_segunda.items():
                     # list_mes[lista_segunda.keys()]=lista_segunda.values()
                     print(' TESTANDO DICIONARIO %s %s'%(k,v))
-                json.dump(lista_segunda,mes_json)
+                json.dump(lista_segunda,mes_json,indent=4)
                 # print(json.loads(json_data))
 
             elif dia_semana==1:
@@ -92,7 +104,7 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
-                json.dump(lista_terca,mes_json)
+                json.dump(lista_terca,mes_json,indent=4)
                 # print(json.loads(json_data))
 
             elif dia_semana==2:
@@ -114,7 +126,7 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
-                json_data = json.dump(lista_quarta,mes_json)
+                json_data = json.dump(lista_quarta,mes_json,indent=4)
                 # print(json.loads(json_data))
 
             elif dia_semana==3:
@@ -136,7 +148,7 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
-                json_data = json.dump(lista_quinta,mes_json)
+                json_data = json.dump(lista_quinta,mes_json,indent=4)
                 # print(json.loads(json_data))
 
             elif dia_semana==4:
@@ -156,7 +168,7 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
-                json_data = json.dump(lista_sexta,mes_json)
+                json_data = json.dump(lista_sexta,mes_json,indent=4)
                 # print(json.loads(json_data))
 
             elif dia_semana==5:
@@ -179,21 +191,16 @@ def generate(request):
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
-                json_data = json.dump(lista_sabado,mes_json)
+                json_data = json.dump(lista_sabado,mes_json,indent=4)
                 # print(json.loads(json_data))
     mes_json = open(os.path.join(BASE_DIR,'file.json'),'r')
-    # data = json.loads(mes_json)
-
-    # print('JSON')
-    # for d in data:
-    #     print(d)
     contagem_irmaos(lista_mes)
     arqmes.close()
     sys.stdout.close()
     sys.stdout = external
     arqmes = open(os.path.join(BASE_DIR, 'mes.txt'), 'r')
     ultima_linha=wsMes.max_row+2
-    rowdate = datetime.datetime.today()
+    rowdate = datetime.today()
 
     wsMes.merge_cells(start_row=ultima_linha+2,start_column=1,end_row=ultima_linha+2,end_column=2)
     wsMes.cell(row=ultima_linha,column=1).value='Data de geracao'
@@ -201,8 +208,7 @@ def generate(request):
     wsMes.cell(row=ultima_linha,column=3).value=rowdate
     wsMes.insert_rows(1,1)
     wsMes.merge_cells(start_row=1,start_column=1,end_row=1,end_column=3)
-    # print(mes_nm)
-    wsMes.cell(row=1,column=1).value=mes_nm
+    wsMes.cell(row=1,column=1).value=mes_label
     wsMes.insert_rows(2,1)
     wsMes.cell(row=2,column=1).value='Dia Mes'
     wsMes.cell(row=2,column=2).value='Dia Semana'
@@ -218,7 +224,7 @@ def generate(request):
     wsMes.cell(row=2,column=12).value='Periodo 5'
     fmtPlan(wsMes)
     wbMes.save(filename=planMes)
-    return render(request,'cadastro/resultado.html',{'mensagem':mensagem,'lista_mes':lista_mes})
+    return render(request,'cadastro/resultado.html',{'mensagem':mensagem,'lista_mes':lista_mes,'qs':qs,'hoje':hoje,'mes_label':mes_label})
 
 def localiza_dias(ds,dia_mes):
     dia = filling_header()
@@ -502,23 +508,40 @@ def grava_json(BASE_DIR,lista_mes):
         json.dump(lista_mes,f)
 
 def contagem_irmaos(lista_mes):
-    for i in consulta_irmaos():
-        print(type(lista_mes))
     p = len(lista_mes)
-    print(p)
-def planilha(request):
-    retorno = {'contexto':'retorno'}
-    return render(request,'cadastro/planilha.html',{})
+    return str(p)
+
+def querydict_to_dict(query_dict):
+    data = {}
+    for key in query_dict.keys():
+        v = query_dict.getlist(key)
+        data[key]=v
+    return data
+
+def confirmacao(request):
+    BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    BASE_DIR = os.path.join(BASE,'logs')
+    mes_json = open(os.path.join(BASE_DIR,'file_new.json'),'w')
+    data = querydict_to_dict(request.POST)
+    total_dias = len([v for v in request.POST.getlist('dia_mes')])
+    myDictAll = []
+    c = 1
+    print('total de dias {}'.format(total_dias))
+    while c <total_dias:
+        myDict = {k:list(request.POST.getlist(k))[c] for k,v in request.POST.items() if k!='csrfmiddlewaretoken'}
+        # print(myDict)
+        gravar = designacao(mes=myDict['mes'],dia_mes=myDict['dia_mes'],dia_semana=myDict['dia_semana'],p1=myDict['p1'],p1_1=myDict['p1_1'],p1_2=myDict['p1_2'],p2=myDict['p2'],p2_1=myDict['p2_1'],p3=myDict['p3'],p3_1=myDict['p3_1'],p4=myDict['p4'],p4_1=myDict['p4_1'],p5=myDict['p5'],p5_1=myDict['p5_1'])
+        myDictAll.append(myDict)
+        gravar.save()
+        c+=1
+    return render(request,'cadastro/confirmacao.html',{'request':request,'data':data,'myDictAll':myDictAll})
+
 
 def importar(request):
     context={}
     leitor={}
     fs = FileSystemStorage()
     if request.method=='POST':
-        print('post enviado')
-        # print(request.body)
-        # print(request.FILES)
-        # print(request.META)
         uploadFile=request.FILES['file_import']
         name = fs.save(uploadFile.name, uploadFile)
         leitor = spreadsheet_reader(uploadFile)

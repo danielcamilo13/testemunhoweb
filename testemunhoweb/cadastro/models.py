@@ -122,3 +122,44 @@ class dias(models.Model):
     class Meta:
         verbose_name = 'Dia'
         verbose_name_plural = 'Dia'
+
+# @python_2_unicode_compatible
+class designacao(models.Model):
+    seg = 'Segunda-feira'
+    ter = 'Terca-feira'
+    qua = 'Quarta-feira'
+    qui = 'Quinta-feira'
+    sex = 'Sexta-feira'
+    sab = 'Sabado'
+    dom = 'Domingo'
+    dias_semana = (
+        (seg,'Segunda-feira'),
+        (ter,'Terca-feira'),
+        (qua,'Quarta-feira'),
+        (qui,'Quinta-feira'),
+        (sex,'Sexta-feira'),
+        (sab,'Sabado'),
+        (dom,'Domingo'),
+    )
+    id = models.AutoField(primary_key=True)
+    csrfmiddlewaretoken=models.CharField(verbose_name='P1',max_length=80,default=1)
+    ano = models.IntegerField(verbose_name='Ano',default=timezone.now().year)
+    mes = models.CharField(verbose_name='mes',max_length=25)
+    dia_semana = models.CharField(verbose_name='Dia Semana',max_length=25,choices=dias_semana)
+    dia_mes = models.IntegerField(verbose_name='Dia Mes')
+    p1 = models.CharField(verbose_name='P1',max_length=35)
+    p1_1 = models.CharField(verbose_name='P1_1',max_length=35)
+    p1_2 = models.CharField(verbose_name='P1_2',max_length=35)
+    p2 = models.CharField(verbose_name='P2',max_length=35)
+    p2_1 = models.CharField(verbose_name='P2_1',max_length=35)
+    p3 = models.CharField(verbose_name='P3',max_length=35)
+    p3_1= models.CharField(verbose_name='P3_1',max_length=35)
+    p4= models.CharField(verbose_name='P4',max_length=35)
+    p4_1= models.CharField(verbose_name='P4_1',max_length=35)
+    p5= models.CharField(verbose_name='P5',max_length=35)
+    p5_1= models.CharField(verbose_name='P5_1',max_length=35)
+    def __str__(self):
+        return str(self.dia_mes)
+    class Meta:
+        verbose_name = 'Designação'
+        verbose_name_plural = 'Designações'

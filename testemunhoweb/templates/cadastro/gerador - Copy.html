@@ -8,11 +8,15 @@
 {% block bodyclass %}{{ block.super }} dashboard{% endblock %}
 
 {% block breadcrumbs %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
 {% block content %}
 <div id="content-main">
     Voce esta trabalhando a partir do Terminal {{station}}
     
-    <form action=" gerador/" method="post" novalidate>
+    <form action="{% url 'admin:gerador'%}" method="post" novalidate>
         {% csrf_token %}
         <table>
             <tr><td>

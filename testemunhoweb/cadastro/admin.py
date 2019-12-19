@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from .models import irmaos,dias,irmaosLista
+from .models import irmaos,dias,irmaosLista,designacao
 from django.utils import timezone
 
 def set_irmao(self,request,queryset):
@@ -28,6 +28,10 @@ class irmaoAdminlist(admin.ModelAdmin):
     list_display = ['nm','privilegio','dianteira']
     ordering = ['nm',]
 
+class designacaoAdmin(admin.ModelAdmin):
+    list_display = ['ano','mes','dia_mes','dia_semana','p1','p1_1','p1_2','p2','p2_1','p3','p3_1','p4','p4_1','p5','p5_1']
+    list_filter = ['ano','mes']
+    search_fields = ['p1','p1_1','p1_2','p2','p2_1','p3','p3_1','p4','p4_1','p5','p5_1',]
 
 class irmaoAdmin(admin.ModelAdmin):
     list_display =['nm','conjuge','bairro','estado_civil','dianteira','privilegio','grupo','habilitado','maximo','dtModificado','obs']
@@ -60,18 +64,6 @@ class irmaoAdmin(admin.ModelAdmin):
             obj.dtModificado = timezone.now()
         obj.save()
 
-    # def save_model(self, request, obj, form, change):
-    #
-    #     obj.save
-    #     if form.changed_data == True:
-    #         self.cleaned_data['dtModificado']=timezone.now
-    #         form.save
-    #
-    #     super(irmaoAdmin,self).save_model(request,obj,form,change)
-
-    # fieldsets=(('Dados da Costureira',{'fields':(('nm_costureira','cpf'),('rota','endereco','num','complemento'),('bairro','cep','cidade','estado'),('ddd1','fone1','ddd2','fone2'),('contato','email'))}),
-    # ('Informação adicional',{'classes':('collapse',),'fields':(('nr_banco','banco','tp_conta','agencia','nr_conta'),'status','obs'),}),)
-
 admin.site.register(irmaos,irmaoAdmin)
 admin.site.register(irmaosLista,irmaoAdminlist)
-# admin.site.register(dias)
+admin.site.register(designacao,designacaoAdmin)

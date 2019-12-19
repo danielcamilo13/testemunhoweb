@@ -1,24 +1,28 @@
 {% extends "admin/base_site.html" %}
 {% load i18n static %}
-
-{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
-
-{% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+<head>
+{% block title %}Testemunho Público{% endblock %}
+{% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}" />{% endif %}
+{% block extrahead %}{% endblock %}
+    {% block responsive %}
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive.css" %}">
+    {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
 {% endblock %}
-{%block content%}
-{{mensagem}}
-<form method="post" action="{%url 'cadastro:planilha'%}">
-    {%csrf_token%}
+{% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+</head>
+{% block branding %} <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ mes_label}}</a></h1>{% endblock %}
 
+{%block content%}
+<div id="content-main">
     <table align="center" border="3">
         <tr class="{% cycle 'row1' 'row2' %}">
             <td>Mes</td><td>semana</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 2</td><td>Periodo 2</td>
-            <td>Periodo 3</td><td>Periodo 3</td><td>Periodo 4</td><td>Periodo 4</td>
-            <td>Periodo 5</td><td>Periodo 5</td>
+            <td>Periodo 3</td><td>Periodo 3</td>
+            <td>Periodo 4</td><td>Periodo 4</td>
         </tr>
-        {%for dia_mes,dia_semana,p1,p1_1,p1_2,p2,p2_1,p3,p3_1,p4,p4_1,p5,p5_1 in lista_mes%}
-        <tr class="{% cycle 'row1' 'row2' 'row3'%}">
+    {%for dia_mes,dia_semana,p1,p1_1,p1_2,p2,p2_1,p3,p3_1,p4,p4_1,p5,p5_1 in lista_mes%}
+        <tr>
             <td>{{dia_mes|last}}</td>
             <td>{{dia_semana|last}}</td>
             <td>{{p1|last}}</td>
@@ -26,20 +30,49 @@
             <td>{{p1_2|last}}</td>
             <td>{{p2|last}}</td>
             <td>{{p2_1|last}}</td>
-            <td>{{p3|last}}</td>
-            <td>{{p3_1|last}}</td>
             <td>{{p4|last}}</td>
             <td>{{p4_1|last}}</td>
             <td>{{p5|last}}</td>
             <td>{{p5_1|last}}</td>
-            {%endfor%}
         </tr>
+    {%endfor%}
     </table>
-    <br>
-    <input type="submit" value="send">
-</form>
-{%endblock%}
 
+    <form method="post" action="{%url 'cadastro:confirmacao'%}">
+        {%csrf_token%}
+        <div>
+        <table align="center" border="3">
+            <tr class="{% cycle 'row1' 'row2'%}">
+                <td>Mes</td><td>semana</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 2</td><td>Periodo 2</td>
+                <td>Periodo 3</td><td>Periodo 3</td>
+                <td>Periodo 4</td><td>Periodo 4</td>
+                <td>Periodo 5</td><td>Periodo 5</td>
+            </tr>
+            {%for dia_mes,dia_semana,p1,p1_1,p1_2,p2,p2_1,p3,p3_1,p4,p4_1,p5,p5_1 in lista_mes%}
+            <tr class="{% cycle 'row1' 'row2'%}">
+                <td><input type="text" name="mes" value="{{mes_label}}" size="3"></td>
+                <td><input type="text" name="dia_mes" value="{{dia_mes|last}}" size="3"></td>
+                <td><input type="text" name="dia_semana" value="{{dia_semana|last}}" size="13"></td>
+                <td><input type="text" name="p1" value="{{p1|last}}" size="10"></td>
+                <td><input type="text" name="p1_1" value="{{p1_1|last}}" size="10"></td>
+                <td><input type="text" name="p1_2" value="{{p1_2|last}}" size="10"></td>
+                <td><input type="text" name="p2" value="{{p2|last}}" size="10"></td>
+                <td><input type="text" name="p2_1" value="{{p2_1|last}}" size="10"></td>
+                <td><input type="text" name="p3" value="{{p3|last}}" size="10"></td>
+                <td><input type="text" name="p3_1" value="{{p3_1|last}}" size="10"></td>
+                <td><input type="text" name="p4" value="{{p4|last}}" size="10"></td>
+                <td><input type="text" name="p4_1" value="{{p4_1|last}}" size="10"></td>
+                <td><input type="text" name="p5" value="{{p5|last}}" size="10"></td>
+                <td><input type="text" name="p5_1" value="{{p5_1|last}}" size="10"></td>
+            </tr>
+            {%endfor%}
+        </table>
+        </div>
+        <input type="submit" value="Gravar">
+    </form>
+    <div>Dia: {{hoje}}</div>
+</div>
+{%endblock%}
 
 {%block footer%}
 <a href="{%url 'admin:index'%}">voltar </a>

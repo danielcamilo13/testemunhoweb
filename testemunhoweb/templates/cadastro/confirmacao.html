@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
+{% block content %}
+<div id="content-main">
+    <p> Usuario logado: {{request.user}}</p>
+
+    {%if myDictAll%}
+	<table>
+    {%for line in myDictAll%}
+    <tr class="{% cycle 'row1' 'row2' %}">
+    <td>{{line.dia_mes}}</td>
+    <td>{{line.dia_semana}}</td>
+    <td>{{line.p1}}</td>
+    <td>{{line.p1_1}}</td>
+    <td>{{line.p1_2}}</td>
+    <td>{{line.p2}}</td>
+    <td>{{line.p2_1}}</td>
+    <td>{{line.p3}}</td>
+    <td>{{line.p3_1}}</td>
+    <td>{{line.p4}}</td>
+    <td>{{line.p4_1}}</td>
+    <td>{{line.p5}}</td>
+    <td>{{line.p5_1}}</td>
+	</tr>
+    {%endfor%}
+	</table>
+	{%endif%}
+
+</div>
+{%endblock%}

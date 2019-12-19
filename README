@@ -11,3 +11,7 @@ https://help.pythonanywhere.com/pages/MySQLBackupRestore
 definir form para exibir somente arquivo de extensão xls
 https://www.codeproject.com/Questions/763540/How-to-browse-only-xls-and-xlsx-file-in-html-file
 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+
+20191212 - 14:04
+verbose name para app name
+https://stackoverflow.com/questions/15694078/verbose-name-app-in-django-admin-interface
