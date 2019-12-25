@@ -2,40 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b708fdc-8558-413e-aeb8-948ba38cddf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0041_auto_20191213_0003.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0042_auto_20191213_0005.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0043_auto_20191213_0010.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0044_auto_20191213_0014.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0045_auto_20191213_0027.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0046_designar_ano.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0047_auto_20191213_0135.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/migrations/0048_designacao_csrfmiddlewaretoken.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/logs/5.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/logs/April.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/logs/October.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/logs/file_new.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/media/orcamento - Internet.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador - Copy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testemunhoweb/calendario.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/December.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/December.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/January.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/January.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/November.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/November.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/backlog.log" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/backlog.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/file.json" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/file.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/lista_mes.json" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/lista_mes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/mes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/logs/mes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/planilha.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,22 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-              <folding>
-                <element signature="e#24#63#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="33" column="85" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
+            <state relative-caret-position="221">
+              <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -70,10 +39,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="34">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="29" />
+              <folding>
+                <element signature="e#24#79#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/main/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="646">
+              <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -114,13 +128,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>JSON</find>
-      <find>load</find>
       <find>app</find>
       <find>data</find>
       <find>Dia 25</find>
@@ -149,6 +162,8 @@
       <find>dump</find>
       <find>gerador</find>
       <find>planMes</find>
+      <find>EventFeed</find>
+      <find>Events</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -213,28 +228,30 @@
         <option value="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/testemunhoweb/main/settings.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/importar2.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/importar.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/main/urls.py" />
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/planilha.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" />
+        <option value="$PROJECT_DIR$/calendario.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/calendario.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/main/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="32" />
-    <option name="width" value="699" />
-    <option name="height" value="744" />
+    <option name="x" value="676" />
+    <option name="y" value="40" />
+    <option name="width" value="697" />
+    <option name="height" value="371" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -259,20 +276,7 @@
               <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
               <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="cadastro" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="cadastro" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -285,6 +289,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Daniel\projetos\testemunhoweb-projeto\testemunhoweb" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -435,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576127510941</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2019 12 19&#10;inclusao do modulo histórico">
+      <created>1576780416930</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576780416930</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -449,8 +465,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24432677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.36081696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -461,7 +478,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.2487725" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -503,7 +520,8 @@
     <MESSAGE value="2019 12 02 22:25&#10;inclusao das paginas de consulta" />
     <MESSAGE value="2019 12 06 21:25&#10;inclusao das paginas de consulta" />
     <MESSAGE value="2019 12 06 21:25&#10;incluido o leitor de planilhas" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019 12 06 21:25&#10;incluido o leitor de planilhas" />
+    <MESSAGE value="2019 12 19&#10;inclusao do modulo histórico" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019 12 19&#10;inclusao do modulo histórico" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -655,13 +673,6 @@
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/actions.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lib/site-packages/django/template/context.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -670,41 +681,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/importar2.html" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="20" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/app_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/base_site.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -718,29 +698,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador.html" />
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/planilha.html" />
     <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="150" column="7" selection-start-line="150" selection-start-column="5" selection-end-line="150" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -751,20 +714,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/app_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="59" selection-start-line="87" selection-end-line="87" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="1292">
+          <caret line="76" column="12" selection-start-line="76" selection-start-column="12" selection-end-line="76" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -777,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="646">
+          <caret line="38" column="59" selection-start-line="38" selection-start-column="59" selection-end-line="38" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -792,12 +766,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="29" />
+          <folding>
+            <element signature="e#24#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="33" column="85" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
+        <state relative-caret-position="221">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

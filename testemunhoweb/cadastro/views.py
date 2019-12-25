@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+from __future__ import unicode_literals,absolute_import
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 import os, sys,openpyxl,re,calendar
@@ -11,6 +11,27 @@ from openpyxl import Workbook
 from .tratamento import tratamento,spreadsheet_reader
 from django.core.files.storage import FileSystemStorage
 from django.core.serializers import serialize
+from django_ical.views import ICalFeed
+
+
+
+
+# Mapping of iCalendar event attributes to prettier names.
+EVENT_ITEMS = (
+    ('uid', 'item_uid'),
+    ('dtstart', 'item_start'),
+    ('dtend', 'item_end'),
+    ('duration', 'item_duration'),
+    ('summary', 'item_summary'),
+    ('description', 'item_description'),
+    ('location', 'item_location'),
+    ('url', 'item_url'),
+    ('comment', 'item_comment'),
+    ('last-modified', 'item_last_modified'),
+    ('created', 'item_created'),
+    ('categories', 'item_categories'),
+    ('rruleset', 'item_rruleset')
+)
 
 def index(request):
     return 'index'
@@ -547,3 +568,42 @@ def importar(request):
         leitor = spreadsheet_reader(uploadFile)
         context = leitor
     return render(request,'cadastro/importar.html',{'context':context})
+
+
+class EventFeed(ICalFeed):
+    """
+    A simple event calender
+    """
+    product_id = '-//example.com//Example//EN'
+    timezone = 'UTC'
+    file_name = "event.ics"
+
+    def items(self):
+        return Event.objects.all().order_by('-date')
+
+    def item_guid(self, item):
+        return "{}{}".format(item.id, "global_name")
+
+    def item_title(self, item):
+        return "{}".format(item.name)
+
+    def item_description(self, item):
+        return item.description
+
+    def item_start_datetime(self, item):
+        return item.date
+
+    def item_link(self, item):
+        return "http://www.google.de"
+
+class EventFeed(ICalFeed):
+    """
+    A simple event calender
+    """
+    product_id = '-//example.com//Example//EN'
+    timezone = 'UTC'
+    file_name = "event.ics"
+
+    def __call__(self, request, *args, **kwargs):
+        self.request = request
+        return super(EventFeed, self).__call__(request, *args, **kwargs)

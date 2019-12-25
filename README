@@ -15,3 +15,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
 20191212 - 14:04
 verbose name para app name
 https://stackoverflow.com/questions/15694078/verbose-name-app-in-django-admin-interface
+
+fazer a iteração de dados (para a função request.POST.getlist)
+
+instalado a biblioteca django-cal (usei este padrão)
+https://github.com/statesofpop/django-cal/blob/master/django_cal/views.py#L76
+https://github.com/statesofpop/django-cal
