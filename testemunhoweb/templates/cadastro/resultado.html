@@ -37,13 +37,16 @@
         </tr>
     {%endfor%}
     </table>
+<br>
 
     <form method="post" action="{%url 'cadastro:confirmacao'%}">
         {%csrf_token%}
         <div>
         <table align="center" border="3">
             <tr class="{% cycle 'row1' 'row2'%}">
-                <td>Mes</td><td>semana</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 1</td><td>Periodo 2</td><td>Periodo 2</td>
+                <td>Mes</td><td>Dia do Mes</td><td>semana</td>
+                <td>Periodo 1</td><td>Periodo 1</td><td>Periodo 1</td>
+                <td>Periodo 2</td><td>Periodo 2</td>
                 <td>Periodo 3</td><td>Periodo 3</td>
                 <td>Periodo 4</td><td>Periodo 4</td>
                 <td>Periodo 5</td><td>Periodo 5</td>
@@ -71,9 +74,16 @@
         <input type="submit" value="Gravar">
     </form>
     <div>Dia: {{hoje}}</div>
-</div>
 {%endblock%}
-
+</div>
+{% block sidebar %}
+<div id="content-related">
+    Lista dos irmaos
+    {%for item_lista in lista%}
+    <p>{{item_lista.irmao__nm}}</p>
+    {%endfor%}
+</div>
+{% endblock%}
 {%block footer%}
 <a href="{%url 'admin:index'%}">voltar </a>
 {%endblock%}

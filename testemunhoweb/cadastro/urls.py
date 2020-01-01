@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
-from .tratamento import newEvent
-
+from .exporting import EventFeed
 
 app_name = 'cadastro'
 urlpatterns =[
@@ -11,5 +10,5 @@ urlpatterns =[
     path('showing/',views.showing,name='showing'),
     path('confirmacao/',views.confirmacao,name='confirmacao'),
     path('importar/',views.importar,name='importar'),
-    path('exportar/', newEvent()),
+    path('novoevento', EventFeed(),name='novoevento'),
 ]

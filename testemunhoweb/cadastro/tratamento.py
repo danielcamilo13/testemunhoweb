@@ -2,33 +2,36 @@ import os,sys,re
 from .models import irmaos,dias
 from openpyxl import load_workbook,Workbook
 from django.core.files.storage import FileSystemStorage
-import datetime, django_cal
-from django_cal.views import Events
-import dateutil.rrule as rrule
+import django_cal
+from datetime import datetime
 
-def tratamento(dia,dm,ds,par,fill_header,designado_dia):
+# O objetivo desta funcao é fazer o tratamento das excessoes preferenciais
+def tratamento(dia,dia_mes,ds,par,fill_header,designado_dia):
     '''
     ==> Tratamento das seguintes excessoes
-    Excecao para com dia
     Prioridade no dia
+    Excecao para com dia
+    Excecao para com nome - esta opcao AINDA ESTA DESABILITADA
     trio
-    Excecao para com nome
     '''
-    designado_dia = []
+
     irmaos = consulta_irmaos_dia_semana(ds)
     print('%s Tratamento de excecoes %s'%('*'*20,'*'*20))
-    print('tratando o dia {}.{}'.format(dm,ds))
-    print('campos prenchidos do dicionario dia {}'.format(dia))
+    print('{} - tratando o dia {} - {}'.format(datetime.now(),dia_mes,ds))
+    print('{} - Tratamento - campos prenchidos do dicionario dia {}'.format(datetime.now(),dia))
     for irmao in irmaos:
-        if irmao['preferencial']==True and not re.search(str(dm),str(irmao['irmao__excecao_dia'])):
-            print('=====>Irmaos {} e preferencial na {}'.format(irmao['irmao__nm'],irmao['dia_semana']))
-            print('Nao foi detectado nenhuma excecao adicional considerando o dia  {}. Dias de excecoes  {}'.format(dm,irmao['irmao__excecao_dia']))
-            for k,v in sorted(irmao.items()):
-                if k in dia and irmao['irmao__nm'] not in designado_dia and v==True:
-                    print('ADICIONADO pois ele nao esta nas restricoes {}'.format(irmao['irmao__nm']))
-                    designado_dia.append(irmao['irmao__nm'])
-                    dia[k]=irmao['irmao__nm']
+        if irmao['preferencial']==True:
+            if not re.search(str(dia_mes),str(irmao['irmao__excecao_dia'])):
+                print('=====>Irmaos {} e preferencial na {}\n...e nao tem  excessao para trabalhar nas  {}'.format(irmao['irmao__nm'],irmao['dia_semana'],dia_mes))
+                print('Nao foi detectado nenhuma excecao adicional considerando o dia  {}. Dias de excecoes  {}'.format(dia_mes,irmao['irmao__excecao_dia']))
+                for k,v in sorted(irmao.items()):
+                    if k in dia and irmao['irmao__nm'] not in designado_dia and v==True:
+                        print('{} - ADICIONADO pois ele nao esta nas restricoes {}'.format(datetime.now(),irmao['irmao__nm']))
+                        print('{} - CHAVE ADICIONADA {}'.format(datetime.now(),k))
+                        designado_dia.append(irmao['irmao__nm'])
+                        dia[k]=irmao['irmao__nm']
 
+    return dia,designado_dia
 
 def consulta_irmaos_dia_semana(ds):
     orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True',dia_semana=ds).order_by('?')
@@ -36,6 +39,14 @@ def consulta_irmaos_dia_semana(ds):
 
 def consulta_irmao_dia():
     orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True').order_by('-dia_semana')
+    return orm_dia
+
+# def consulta_irmaos():
+#     orm_irmaos = irmaos.objects.all().order_by('nm')
+#     return orm_irmaos
+
+def consulta_irmaos():
+    orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True').order_by('irmao__nm')
     return orm_dia
 
 def spreadsheet_reader(spreadsheet):
@@ -54,33 +65,17 @@ def spreadsheet_reader(spreadsheet):
         data.append(lines)
     return data
 
-
-class newEvent(Events):
-    def items(self):
-        return ["Whattaday!", "meow"]
-
-    def cal_name(self):
-        return "a pretty calendar."
-
-    def cal_desc(self):
-        return "Lorem ipsum tralalala."
-
-    def item_summary(self, item):
-        return "That was suchaday!"
-
-    def item_start(self, item):
-        return datetime.date(year=2011, month=1, day=24)
-
-    def item_end(self, item):
-        return datetime.date(year=2011, month=1, day=26)
-
-    def item_rruleset(self, item):
-        rruleset = rrule.rruleset()
-        # rruleset.rrule(rrule.YEARLY, count=10, dtstart=self.item_start(item))
-        # rruleset.rrule(rrule.YEARLY, dtstart=self.item_start(item))
-        return rruleset
-
-    def item_categories(self, item):
-        return ["Family", "Birthdays"]
-
-
+#funcao para tratar das excessoes dos irmaos
+# Inicialmente está sendo tratado somente a excessão de dias
+def excessoes(irmao,dia_mes):
+    excp=''
+    exc_dias = [exc for exc in irmaos.objects.values('excecao_dia').filter(nm=irmao)]
+    for exc_item in exc_dias: # for para tirar o conteudo da lista
+        for k,valores in exc_item.items(): #for para todos os valores que estao dentro do unico campo de excecao de dias
+            if valores != None:
+                for v in valores.split(','):
+                    if int(v) == int(dia_mes):
+                        print('dia com excecao LOCALIZADA {}***{}'.format(v,dia_mes))
+                        excp=True
+    exc_nomes = [exc for exc in irmaos.objects.values('excecao_nome').filter(nm=irmao)]
+    return excp,exc_nomes

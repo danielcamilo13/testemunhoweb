@@ -8,30 +8,10 @@ from .models import irmaos,dias,designacao
 import json, csv
 from openpyxl.styles import fills,PatternFill,Border, Side, Alignment, Protection, Font, Color, colors
 from openpyxl import Workbook
-from .tratamento import tratamento,spreadsheet_reader
+from .tratamento import tratamento,spreadsheet_reader,consulta_irmaos,excessoes
 from django.core.files.storage import FileSystemStorage
 from django.core.serializers import serialize
-from django_ical.views import ICalFeed
-
-
-
-
-# Mapping of iCalendar event attributes to prettier names.
-EVENT_ITEMS = (
-    ('uid', 'item_uid'),
-    ('dtstart', 'item_start'),
-    ('dtend', 'item_end'),
-    ('duration', 'item_duration'),
-    ('summary', 'item_summary'),
-    ('description', 'item_description'),
-    ('location', 'item_location'),
-    ('url', 'item_url'),
-    ('comment', 'item_comment'),
-    ('last-modified', 'item_last_modified'),
-    ('created', 'item_created'),
-    ('categories', 'item_categories'),
-    ('rruleset', 'item_rruleset')
-)
+import locale
 
 def index(request):
     return 'index'
@@ -46,6 +26,8 @@ def designar(request):
 
 
 def gerador(request):
+    lista = consulta_irmaos()
+    locale.setlocale(locale.LC_ALL,'pt-BR')
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     BASE_DIR = os.path.join(BASE,'logs')
     hoje = datetime.now()
@@ -66,20 +48,18 @@ def gerador(request):
     mes_json = open(os.path.join(BASE_DIR,'file.json'),'w')
 
     if 'ano' in request.POST:
-        # a = str(request.POST['ano'])
         mes = int(request.POST['mes'])
         mes_label = calendar.month_name[mes]
-        # mes_label = mes.strftime('%B')
+        ano = int(request.POST['ano'])
         planMes = os.path.join(BASE_DIR, mes_label) + '.xlsx'
-        # mes_ext = datetime.strptime(m,'%m')
         mensagem = mes_label
-        ultimo_dia = calendar.monthrange(int(d), int(mes))[1]
+        ultimo_dia = calendar.monthrange(ano, int(mes))[1]
         campos = [f.name for f in dias._meta.get_fields()][3:]
         expurgo_dia = []
         designado_dia = []
         lista_segunda = {}; lista_terca = {};lista_quarta ={};lista_quinta ={}; lista_sexta ={};lista_sabado ={}
         for dia_mes in range(1,ultimo_dia+1):
-            dia_semana = calendar.weekday(int(d), int(mes), dia_mes)
+            dia_semana = calendar.weekday(int(ano), int(mes), dia_mes)
             if dia_semana==0:
                 ds='Segunda-feira'
                 dia=filling_header()
@@ -245,7 +225,7 @@ def gerador(request):
     wsMes.cell(row=2,column=12).value='Periodo 5'
     fmtPlan(wsMes)
     wbMes.save(filename=planMes)
-    return render(request,'cadastro/resultado.html',{'mensagem':mensagem,'lista_mes':lista_mes,'qs':qs,'hoje':hoje,'mes_label':mes_label})
+    return render(request,'cadastro/resultado.html',{'mensagem':mensagem,'lista_mes':lista_mes,'qs':qs,'hoje':hoje,'mes_label':mes_label,'lista':lista})
 
 def localiza_dias(ds,dia_mes):
     dia = filling_header()
@@ -307,26 +287,24 @@ def filled_each_day(ds,dia,par,dia_mes,lista_dia,expurgo_dia,designado_dia):
     #antes do tratamento recuperar todos os campos de periodos
     fill_header = filling_header()
     trat = tratamento(dia,dia_mes,ds,par,fill_header,designado_dia)
+    ### PREENCHIMENTO REGULAR
     for i in consulta_irmaos():
         p1=i['p1']; p1_1=i['p1_1']; p1_2=i['p1_2']; p2  =i['p2']; p2_1=i['p2_1']; p3  =i['p3']; p3_1=i['p3_1']; p4  =i['p4']; p4_1=i['p4_1']; p5  =i['p5']; p5_1=i['p5_1']
         irmao = i['irmao__nm']
         conjuge = i['irmao__conjuge']
         genero = i['irmao__gr']
         maximo = i['irmao__maximo']
-        pref = i['preferencial']
         if i['dia_semana'] == ds:
             cl_day = cleaner_days(ds,dia)
-            if pref == True:
-                print('O irmao %s tem preferencias neste dia '%irmao)
             if not re.search(irmao,str(lista_dia)):
                 print('Irmaos PREVIAMENTE cadastrados %s'%lista_dia)
                 for key,value in sorted(dia.items()):
                     if value=='EMPTY':
-                        print('--> Chave em branco %s'%key)
+                        print('{} --> Chave em branco {}'.format(datetime.now(),key))
                         if i[key]==True:
                             if i['adv'] == adv or i['adv'] == 'Nulo':
-                                print('Varredura do irmao(a) %s' % irmao)
-                                print('Irmao %s disponivel para trabalho no PERIODO %s e trabalha em dias %ses'%(irmao,key,adv))
+                                print('{} - Varredura do irmao(a) {}' .format(datetime.now(),irmao))
+                                print('{} - Irmao {} disponivel para trabalho no PERIODO {} e trabalha em dias {}es'.format(datetime.now(),irmao,key,adv))
                                 #preenchendo periodos
                                 if key=='p1' or key=='p1_1' or key=='p1_2':
                                     periodo = periodo1
@@ -334,44 +312,40 @@ def filled_each_day(ds,dia,par,dia_mes,lista_dia,expurgo_dia,designado_dia):
                                     p1 = 'p1'
                                     p2 = 'p1_2'
                                     preenchimento = dados_preenchimento(periodo, periodo_gr, irmao, conjuge, genero, dia, ds, key,
-                                                                        p1, p2,i,maximo,lista_dia,expurgo_dia,designado_dia)
+                                                                        p1, p2,i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes)
                                 elif key == 'p2' or key == 'p2_1':
                                     periodo = periodo2
                                     periodo_gr = periodo2_gr
                                     p1 = 'p2'
                                     p2 = 'p2_1'
                                     preenchimento = dados_preenchimento(periodo, periodo_gr, irmao, conjuge, genero, dia,ds, key,
-                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia)
+                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes)
                                 elif key == 'p3' or key == 'p3_1':
                                     periodo = periodo3
                                     periodo_gr = periodo3_gr
                                     p1 = 'p3'
                                     p2 = 'p3_1'
                                     preenchimento = dados_preenchimento(periodo, periodo_gr, irmao, conjuge, genero, dia,ds, key,
-                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia)
+                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes)
                                 elif key == 'p4' or key == 'p4_1':
                                     periodo = periodo4
                                     periodo_gr = periodo4_gr
                                     p1 = 'p4'
                                     p2 = 'p4_1'
                                     preenchimento = dados_preenchimento(periodo, periodo_gr, irmao, conjuge, genero, dia,ds, key,
-                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia)
+                                                                        p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes)
                                 elif key == 'p5' or key == 'p5_1':
                                     periodo = periodo5
                                     periodo_gr = periodo5_gr
                                     p1 = 'p5'
                                     p2 = 'p5_1'
                                     preenchimento = dados_preenchimento(periodo, periodo_gr, irmao, conjuge, genero, dia,ds, key,
-                                                                    p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia)
+                                                                    p1, p2, i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes)
             else:
                 print('Irmao(a) %s ja foi PREVIAMENTE designado' %irmao)
     print('%s \n Dia da semana preenchido %s : %s \n%s' % ('*'*50,ds,dia,'*'*50))
     lista_dia = dia.values()
     return dia#,lista_dia
-
-def consulta_irmaos():
-    orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True').order_by('?')
-    return orm_dia
 
 def showing(request):
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -476,35 +450,39 @@ def message():
     message5 = 'Irmao nao foi incluido no periodo. Provalmente ja tenha sido designado. Segue periodo:'
     return message1,message2,message3,message4,message5
 
-def dados_preenchimento(periodo,periodo_gr,irmao,conjuge,genero,dia,ds,key,p1,p2,i,maximo,lista_dia,expurgo_dia,designado_dia):
+def dados_preenchimento(periodo,periodo_gr,irmao,conjuge,genero,dia,ds,key,p1,p2,i,maximo,lista_dia,expurgo_dia,designado_dia,dia_mes):
     print('Lista de Expurgo antes da analise %s'%sorted(expurgo_dia))
     if len(periodo)==0 or genero in periodo_gr: #lista de periodo preenchidos
         if int(maximo) > designado_dia.count(str(irmao)):
             if not irmao in dia.values():
-                dia[key]=str(irmao)
-                periodo_gr.append(str(genero))
-                periodo.append(str(irmao))
-                designado_dia.append(str(irmao))
-                if genero=='masculino':
-                    print('Irmao %s DESIGNADO na %s no periodo %s'%(irmao,ds,p1))
-                else:
-                    print('Irma %s DESIGNADA na %s no periodo %s' % (irmao, ds, p1))
-                print('Genero %s adicionado no %s. %s'%(genero,key,periodo_gr))
-                print('ADICIONADOS %s'%sorted(designado_dia))
-                if conjuge is not None:
-                    print('Irmao(a) %s e casado com %s' % (irmao, conjuge))
-                    conjuge_periodo = conjuge_dados(dia, irmao, ds, key, conjuge)
-                    for c in conjuge_periodo:
-                        if c[p2] == True and dia[p2] == 'EMPTY':
-                            print('Conjuge %s habilitado para ficar no mesmo horario (Periodo %s) %s' % (conjuge,p2,c[p2]))
-                            dia[p2] = str(conjuge)
-                            periodo.append(str(conjuge))
-                            designado_dia.append(str(conjuge))
-                        else:
-                            print('Conjuge nao e voluntario para o mesmo horario')
-                if irmao in expurgo_dia:
-                    expurgo_dia.remove(irmao)
-                    print('Irmao %s removido da lista de expurgo '%irmao)
+                exc = excessoes(irmao,dia_mes)
+                exc_dias = str(exc[0])
+                print('TIPINHO {}'.format(exc_dias))
+                if exc_dias != 'True':
+                    dia[key]=str(irmao)
+                    periodo_gr.append(str(genero))
+                    periodo.append(str(irmao))
+                    designado_dia.append(str(irmao))
+                    if genero=='masculino':
+                        print('Irmao %s DESIGNADO na %s no periodo %s'%(irmao,ds,p1))
+                    else:
+                        print('Irma %s DESIGNADA na %s no periodo %s' % (irmao, ds, p1))
+                    print('Genero %s adicionado no %s. %s'%(genero,key,periodo_gr))
+                    print('ADICIONADOS %s'%sorted(designado_dia))
+                    if conjuge is not None:
+                        print('Irmao(a) %s e casado com %s' % (irmao, conjuge))
+                        conjuge_periodo = conjuge_dados(dia, irmao, ds, key, conjuge)
+                        for c in conjuge_periodo:
+                            if c[p2] == True and dia[p2] == 'EMPTY':
+                                print('Conjuge %s habilitado para ficar no mesmo horario (Periodo %s) %s' % (conjuge,p2,c[p2]))
+                                dia[p2] = str(conjuge)
+                                periodo.append(str(conjuge))
+                                designado_dia.append(str(conjuge))
+                            else:
+                                print('Conjuge nao e voluntario para o mesmo horario')
+                    if irmao in expurgo_dia:
+                        expurgo_dia.remove(irmao)
+                        print('Irmao %s removido da lista de expurgo '%irmao)
             else:
                 print('Irmao nao foi designado no periodo %s'%key)
     else:
@@ -513,15 +491,16 @@ def dados_preenchimento(periodo,periodo_gr,irmao,conjuge,genero,dia,ds,key,p1,p2
         print('irmaos adicionado na lista de expurgo no preenchimento %s'%sorted(expurgo_dia))
     return dia
 
+#função responsável por limpar o valor padrao EMPTY que está em cada período. a lógica natural é o valor EMPTY sempre ser modificado com o nome do irmão designado
 def cleaner_days(ds,dia):
-    if ds == 'Terca-feira' or ds == 'Quarta-feira':
+    if ds == 'Quinta-feira' or ds == 'Quarta-feira':
         dia['p5'] = ''; dia['p5_1'] = ''
-    if ds == 'Terca-feira' or ds == 'Quarta-feira' or ds == 'Sexta-feira' or ds == 'Sabado' or ds == 'Segunda-feira':
+    if ds == 'Segunda-feira' or ds == 'Terca-feira' or ds == 'Quarta-feira' or ds == 'Quinta-feira' or ds == 'Sexta-feira' or ds == 'Sabado':
         dia['p1_2'] = ''; dia['p3'] = ''; dia['p3_1'] = ''
     if ds == 'Sabado':
         dia['p1'] = ''; dia['p1_1'] = ''; dia['p1_2'] = ''; dia['p2'] = ''; dia['p2_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''
-    if ds == 'Quinta-feira':
-        dia['p2'] = ''; dia['p2_1'] = ''; dia['p1_2'] = ''; dia['p5'] = ''; dia['p5_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''; dia['p4'] = '';dia['p4_1'] = ''
+    if ds == 'Terca-feira':
+        dia['p5'] = ''; dia['p5_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''; dia['p4'] = '';dia['p4_1'] = ''; dia['p2'] = ''; dia['p2_1'] = ''
     return ds,dia
 
 def grava_json(BASE_DIR,lista_mes):
@@ -568,42 +547,3 @@ def importar(request):
         leitor = spreadsheet_reader(uploadFile)
         context = leitor
     return render(request,'cadastro/importar.html',{'context':context})
-
-
-class EventFeed(ICalFeed):
-    """
-    A simple event calender
-    """
-    product_id = '-//example.com//Example//EN'
-    timezone = 'UTC'
-    file_name = "event.ics"
-
-    def items(self):
-        return Event.objects.all().order_by('-date')
-
-    def item_guid(self, item):
-        return "{}{}".format(item.id, "global_name")
-
-    def item_title(self, item):
-        return "{}".format(item.name)
-
-    def item_description(self, item):
-        return item.description
-
-    def item_start_datetime(self, item):
-        return item.date
-
-    def item_link(self, item):
-        return "http://www.google.de"
-
-class EventFeed(ICalFeed):
-    """
-    A simple event calender
-    """
-    product_id = '-//example.com//Example//EN'
-    timezone = 'UTC'
-    file_name = "event.ics"
-
-    def __call__(self, request, *args, **kwargs):
-        self.request = request
-        return super(EventFeed, self).__call__(request, *args, **kwargs)

@@ -21,3 +21,9 @@ fazer a iteração de dados (para a função request.POST.getlist)
 instalado a biblioteca django-cal (usei este padrão)
 https://github.com/statesofpop/django-cal/blob/master/django_cal/views.py#L76
 https://github.com/statesofpop/django-cal
+
+Usando a pagina abaixo para implementacao de pdf
+https://python.hotexamples.com/site/file?hash=0xfb57422ff2eacfc103c7a71f92b2997670a8ca54a6e3e443320e664c5c9ef8dd&fullName=Sisfaconp/apps/views.py&project=elcordova/Sisfaconp
+
+alterando locales
+https://stackoverflow.com/questions/13037370/python-calendar-day-month-names-in-specific-locale
