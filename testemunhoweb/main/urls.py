@@ -18,7 +18,7 @@ from django.contrib import admin
 
 urlpatterns = [
 	# path('consulta/',include('consulta.urls')),
-	path('consulta/',include('consulta.urls',namespace='index')),
+	path('admin/consulta/',include('consulta.urls',namespace='index')),
     path('cadastro/',include('cadastro.urls')),
     # path('admin/cadastro/',include('cadastro.urls')),
     path(r'admin/', admin.site.urls),
