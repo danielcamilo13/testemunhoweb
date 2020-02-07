@@ -51,8 +51,11 @@ def consulta_irmaos():
 
 def spreadsheet_reader(spreadsheet):
     data = []
+    dicionario = []
     wb = load_workbook(filename=spreadsheet)
     ws = wb.active
+    # chaves = [ch for ch in range(1,ws.max_column)]
+    # print('estas sao as chaves {}'.format(chaves))
     last_row = ws.max_row
     last_column = ws.max_column
     for r in range(1,last_row):
@@ -60,7 +63,7 @@ def spreadsheet_reader(spreadsheet):
         for c in range(1,last_column):
             v = ws.cell(row=r,column=c).value
             if v is None:
-                v='-'
+                v=''
             lines.append(v)
         data.append(lines)
     return data
@@ -79,3 +82,6 @@ def excessoes(irmao,dia_mes):
                         excp=True
     exc_nomes = [exc for exc in irmaos.objects.values('excecao_nome').filter(nm=irmao)]
     return excp,exc_nomes
+
+def headers_dict():
+    bla = 0

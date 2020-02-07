@@ -450,6 +450,7 @@ select[multiple] {
 
 .button, input[type=submit], input[type=button], .submit-row input, a.button {
     background: #79aec8;
+    /*background: #79aec8; */
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -646,7 +647,7 @@ div.system-message p.system-message-title {
 /* BREADCRUMBS */
 
 div.breadcrumbs {
-    background: #79aec8;
+    background: #0f5d83;
     padding: 10px 40px;
     border: none;
     font-size: 14px;
@@ -678,6 +679,7 @@ div.breadcrumbs a:focus, div.breadcrumbs a:hover {
     padding-left: 16px;
     background: url(../img/icon-changelink.svg) 0 1px no-repeat;
 }
+
 
 .deletelink {
     padding-left: 16px;
@@ -892,8 +894,8 @@ table#change-history tbody th {
 
 #user-tools a:focus, #user-tools a:hover {
     text-decoration: none;
-    border-bottom-color: #79aec8;
-    color: #79aec8;
+    border-bottom-color: #231F20;
+    color: #000;
 }
 
 /* SIDEBAR */

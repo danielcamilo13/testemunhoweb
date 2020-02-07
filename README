@@ -27,3 +27,28 @@ https://python.hotexamples.com/site/file?hash=0xfb57422ff2eacfc103c7a71f92b29976
 
 alterando locales
 https://stackoverflow.com/questions/13037370/python-calendar-day-month-names-in-specific-locale
+
+configuracao de locale para linux
+https://www.linhadecomando.com/so-linux/linux-instalando-o-locale-pt_br-utf-8
+
+pythonanywhere - deploy
+https://www.codigofluente.com.br/deploy-no-pythonanywhere-final/
+
+inclusão na tela de login o link de reset de senha para usuário que envia e-mail
+https://djangobook.com/mdj2-django-admin/
+
+Sobre template tags
+https://www.codementor.io/@hiteshgarg14/creating-custom-template-tags-in-django-application-58wvmqm5f
+https://docs.djangoproject.com/pt-br/3.0/howto/custom-template-tags/
+https://www.youtube.com/watch?v=P_wyVIUl4P4
+https://stackoverflow.com/questions/420703/how-do-i-add-multiple-arguments-to-my-custom-template-filter-in-a-django-templat - usei este aqui
+
+como pegar dia, mes e ano de um datetime
+https://kite.com/python/examples/5639/datetime-get-the-year,-month,-and-day-of-a-%60datetime%60
+
+Aba - em aberto para ser trabalhado
+https://www.youtube.com/watch?v=SKfeIP3q9oI
+
+customizando admin
+https://djangobook.com/mdj2-django-admin/
+https://docs.djangoproject.com/en/3.0/intro/tutorial07/#customize-the-admin-index-page

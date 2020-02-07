@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n static %}
+{% load i18n static custom_tags %}
 
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
 
@@ -11,48 +11,65 @@
 
 {% block content %}
 <div id="content-main">
-
-    <div class="app-{{ app.app_label }} module">
-        <table>
-            <caption>
-                <p>DESIGNAÇÕES</p>
-            </caption>
-            <tr class="model-{{ model.object_name|lower }}">
-
-                <th scope="row">Gerar</th>
-                <th scope="row"></th>
-
-                <td>Criar nova planilha</td>
-                <td>&nbsp;</td>
-                <td><a href="{% url 'cadastro:designar' %}" class="addlink" >Gerar</a></td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr class="model-{{ model.object_name|lower }}">
-
-                <th scope="row">Importar</th>
-                <th scope="row"></th>
-
-                <td>formato xlsx</td>
-                <td>&nbsp;</td>
-                <td><a href="{%url 'cadastro:importar'%}"class="changelink">Importar</a></td>
-                <td>&nbsp;</td>
-            </tr>
-
-            <tr class="model-{{ model.object_name|lower }}">
-
-                <th scope="row">Consultar</th>
-                <th scope="row"></th>
-
-                <td>pesquisa online</td>
-                <td>&nbsp;</td>
-                <td><a href="{%url 'consulta:index'%}"class="changelink">Importar</a></td>
-                <td>&nbsp;</td>
-            </tr>
-
-        </table>
-    </div>
-
     {% if app_list %}
+            <div class="app-{{ app.app_label }} module">
+                <table>
+                    <caption>Veja as proximas designacoes</caption>
+                    <tr class="model-{{model.object_name|lower}}">
+                        <th scope="row">Amanha : {{instance.content|next}}</th>
+                        <td>&nbsp;</td>
+                        <td></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </table>
+                <table>
+                    <caption>CONSULTE SUA DESIGNACAO AQUI</caption>
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row">Minha Designação</th>
+                        <th scope="row"></th>
+                        <td>Veja a sua designação</td>
+                        <td>&nbsp;</td>
+                        <td><a href="{%url 'consulta:consulta_designacao'%}" class="viewlink">localizar</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row">Voluntarios x Dias</th>
+                        <th scope="row"></th>
+                        <td>Veja aqui voluntários para cada dia da semana</td>
+                        <td>&nbsp;</td>
+                        <td><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">localizar</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row">Onde trabalhar</th>
+                        <th scope="row"></th>
+                        <td>Locais para Testemunho público</td>
+                        <!--<td>&nbsp;</td>
+                        <td><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">localizar</a></td>
+                        <td>&nbsp;</td> -->
+                    </tr>
+                </table>
+                    <table>
+                    <caption>ADMINISTRACAO</caption>
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row">Gerar</th>
+                        <th scope="row"></th>
+                        <td>Crie uma planilha com as designações</td>
+                        <td>&nbsp;</td>
+                        <td><a href="{% url 'cadastro:designar' %}" class="addlink">Gerar</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr class="model-{{ model.object_name|lower }}">
+                        <th scope="row">Importar</th>
+                        <th scope="row"></th>
+                        <td>Importe sua planilha em formato xlsx para o TP</td>
+                        <td>&nbsp;</td>
+                        <td><a href="{%url 'cadastro:importar'%}" class="changelink">Importar</a></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+        </div>
+
     {% for app in app_list %}
     <div class="app-{{ app.app_label }} module">
         <table>

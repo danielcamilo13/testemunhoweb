@@ -1,6 +1,6 @@
-from django_ical.views import ICalFeed
+# from django_ical.views import ICalFeed
 from .models import designacao
-from django_cal.views import Events
+# from django_cal.views import Events
 import dateutil.rrule as rrule
 from django_ical.utils import build_rrule
 from datetime import date
@@ -21,7 +21,7 @@ EVENT_ITEMS = (
     ('categories', 'item_categories'),
     ('rruleset', 'item_rruleset')
 )
-
+'''
 class EventFeed(ICalFeed):
     """
     A simple event calender
@@ -86,5 +86,5 @@ class newEvent(Events):
 
     def item_categories(self, item):
         return ["Family", "Birthdays"]
-
+'''
 

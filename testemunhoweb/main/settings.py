@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost','carldarkmsn.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'calendario.apps.CalendarioConfig',
     'consulta.apps.ConsultaConfig',
     'cadastro.apps.CadastroConfig',
     'django.contrib.admin',
@@ -144,10 +145,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'medias/')
+MEDIA_URL = '/medias/'
 STATIC_URL = '/static/'
-# STATIC_ROOT = 'static'
 STATICFILES_DIRS=[
     'static',os.path.join(BASE_DIR,'static'),
     'medias',os.path.join(BASE_DIR,'static','medias')

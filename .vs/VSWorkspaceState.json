@@ -1,8 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\testemunhoweb"
+    "\\testemunhoweb",
+    "\\testemunhoweb\\cadastro",
+    "\\testemunhoweb\\cadastro\\templatetags",
+    "\\testemunhoweb\\consulta",
+    "\\testemunhoweb\\templates",
+    "\\testemunhoweb\\templates\\consulta"
   ],
-  "SelectedNode": "\\testemunhoweb\\calendario.py",
   "PreviewInSolutionExplorer": false
 }

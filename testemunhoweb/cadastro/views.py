@@ -27,9 +27,9 @@ def designar(request):
 
 def gerador(request):
     lista = consulta_irmaos()
-    locale.setlocale(locale.LC_ALL,'pt-BR')
+    locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    BASE_DIR = os.path.join(BASE,'logs')
+    BASE_DIR = os.path.join(BASE,'medias')
     hoje = datetime.now()
     d = hoje.strftime('%d')
     qs = str(request.META['QUERY_STRING'])
@@ -71,20 +71,14 @@ def gerador(request):
                 lista_segunda = filled_day
                 lista_dia = lista_segunda
                 # lista_dia=sorted(lista_segunda.values()); print('lista segunda %s'%str(lista_dia))
-                # print('Periodos em branco no dia %s %s: %s'%(str(dia_mes),ds,lista_dia.count('EMPTY')))
                 lista_dia = doublecheck(lista_segunda.items(),ds,designado_dia)
                 lista_mes.append(sorted(lista_dia.items()))
                 swap_file(arqmes,lista_dia)
                 # swap_file(arqmes,filled_day)
                 swap_xls(lista_dia,wsMes,dia_mes)
                 grava_json(BASE_DIR,lista_mes)
-                # rec_dict(BASE_DIR, lista_mes)
-                list_mes[ds]='culinaria'
-                for k,v in lista_segunda.items():
-                    # list_mes[lista_segunda.keys()]=lista_segunda.values()
-                    print(' TESTANDO DICIONARIO %s %s'%(k,v))
                 json.dump(lista_segunda,mes_json,indent=4)
-                # print(json.loads(json_data))
+
 
             elif dia_semana==1:
                 ds='Terca-feira';print(ds)
@@ -97,7 +91,6 @@ def gerador(request):
                 lista_terca = filled_day
                 lista_dia = lista_terca
                 # lista_dia=sorted(lista_terca.values()); print('lista Terca %s'%lista_dia)
-                # print('Periodos em branco no dia %s %s: %s'%(str(dia_mes),ds,lista_dia.count('EMPTY')))
                 lista_dia = doublecheck(lista_terca.items(),ds,designado_dia)
                 lista_mes.append(sorted(lista_dia.items()))
                 swap_file(arqmes,lista_dia)
@@ -106,7 +99,6 @@ def gerador(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 json.dump(lista_terca,mes_json,indent=4)
-                # print(json.loads(json_data))
 
             elif dia_semana==2:
                 ds='Quarta-feira';print(ds)
@@ -119,7 +111,6 @@ def gerador(request):
                 lista_quarta = filled_day
                 lista_dia = lista_quarta
                 # lista_dia= sorted(lista_quarta.values()); print('lista quarta %s'%lista_dia)
-                # print('Periodos em branco no dia %s %s: %s'%(str(dia_mes),ds,lista_dia.count('EMPTY')))
                 lista_dia = doublecheck(lista_quarta.items(),ds,designado_dia)
                 lista_mes.append(sorted(lista_dia.items()))
                 swap_file(arqmes, lista_dia)
@@ -128,7 +119,6 @@ def gerador(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 json_data = json.dump(lista_quarta,mes_json,indent=4)
-                # print(json.loads(json_data))
 
             elif dia_semana==3:
                 ds='Quinta-feira';print(ds)
@@ -141,7 +131,6 @@ def gerador(request):
                 lista_quinta = filled_day
                 lista_dia = lista_quinta
                 # lista_dia= sorted(lista_quinta.values()); print('lista quinta %s'%lista_dia)
-                # print('Periodos em branco no dia %s %s: %s'%(str(dia_mes),ds,lista_dia.count('EMPTY')))
                 # lista_dia = doublecheck(lista_quinta.items(),ds,designado_dia)
                 lista_mes.append(sorted(lista_dia.items()))
                 swap_file(arqmes, lista_dia)
@@ -150,7 +139,6 @@ def gerador(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 json_data = json.dump(lista_quinta,mes_json,indent=4)
-                # print(json.loads(json_data))
 
             elif dia_semana==4:
                 ds='Sexta-feira';print(ds)
@@ -170,7 +158,6 @@ def gerador(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 json_data = json.dump(lista_sexta,mes_json,indent=4)
-                # print(json.loads(json_data))
 
             elif dia_semana==5:
                 ds='Sabado';print(ds)
@@ -193,7 +180,7 @@ def gerador(request):
                 grava_json(BASE_DIR,lista_mes)
                 # rec_dict(BASE_DIR, lista_mes)
                 json_data = json.dump(lista_sabado,mes_json,indent=4)
-                # print(json.loads(json_data))
+
     mes_json = open(os.path.join(BASE_DIR,'file.json'),'r')
     contagem_irmaos(lista_mes)
     arqmes.close()
@@ -225,7 +212,7 @@ def gerador(request):
     wsMes.cell(row=2,column=12).value='Periodo 5'
     fmtPlan(wsMes)
     wbMes.save(filename=planMes)
-    return render(request,'cadastro/resultado.html',{'mensagem':mensagem,'lista_mes':lista_mes,'qs':qs,'hoje':hoje,'mes_label':mes_label,'lista':lista})
+    return render(request,'cadastro/gerador.html',{'mensagem':mensagem,'lista_mes':lista_mes,'qs':qs,'hoje':hoje,'mes_label':mes_label,'lista':lista})
 
 def localiza_dias(ds,dia_mes):
     dia = filling_header()
@@ -263,6 +250,8 @@ def filling_header():
             'p4':'EMPTY','p4_1':'EMPTY',
             'p5':'EMPTY','p5_1':'EMPTY'}
     return line
+
+
 
 def filled_each_day(ds,dia,par,dia_mes,lista_dia,expurgo_dia,designado_dia):
     if par == 0:
@@ -498,7 +487,7 @@ def cleaner_days(ds,dia):
     if ds == 'Segunda-feira' or ds == 'Terca-feira' or ds == 'Quarta-feira' or ds == 'Quinta-feira' or ds == 'Sexta-feira' or ds == 'Sabado':
         dia['p1_2'] = ''; dia['p3'] = ''; dia['p3_1'] = ''
     if ds == 'Sabado':
-        dia['p1'] = ''; dia['p1_1'] = ''; dia['p1_2'] = ''; dia['p2'] = ''; dia['p2_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''
+        dia['p1'] = ''; dia['p1_1'] = ''; dia['p1_2'] = ''; dia['p2'] = ''; dia['p2_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''; dia['p5'] = ''; dia['p5_1'] = ''
     if ds == 'Terca-feira':
         dia['p5'] = ''; dia['p5_1'] = ''; dia['p3'] = ''; dia['p3_1'] = ''; dia['p4'] = '';dia['p4_1'] = ''; dia['p2'] = ''; dia['p2_1'] = ''
     return ds,dia
@@ -520,7 +509,7 @@ def querydict_to_dict(query_dict):
 
 def confirmacao(request):
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    BASE_DIR = os.path.join(BASE,'logs')
+    BASE_DIR = os.path.join(BASE,'medias')
     mes_json = open(os.path.join(BASE_DIR,'file_new.json'),'w')
     data = querydict_to_dict(request.POST)
     total_dias = len([v for v in request.POST.getlist('dia_mes')])

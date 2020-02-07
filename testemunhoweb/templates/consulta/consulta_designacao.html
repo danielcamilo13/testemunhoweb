@@ -1,0 +1,49 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static " admin /css/dashboard.css" %}" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Publico</a></h1>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <form method="post" novalidate action="{%url 'consulta:retorno_designacao'%}">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Localizar">
+    </form>
+</div>
+{% if form_retorno %}
+{% for retorno in form_retorno %}
+<div class="{% cycle 'row1' 'row2' %}">
+    {{retorno.ano}}
+    {{retorno.mes}}
+    {{retorno.dia_semana}}
+    {{retorno.p1}}
+    {{retorno.p1_1}}
+    {{retorno.p1_2}}
+    {{retorno.p2}}
+    {{retorno.p2_1}}
+    {{retorno.p2}}
+    {{retorno.p3}}
+    {{retorno.p3_1}}
+    {{retorno.p4}}
+    {{retorno.p4_1}}
+    {{retorno.p5}}
+    {{retorno.p5_1}}
+    </div>
+    {%endfor%}
+    {%endif%}
+    {% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        <p>campo relacionado</p>
+    </div>
+</div>
+{%endblock%}

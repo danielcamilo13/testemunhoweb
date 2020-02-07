@@ -4,7 +4,7 @@ import time
 from django.contrib import admin
 from .models import irmaos,dias,irmaosLista,designacao
 from django.utils import timezone
-from .exporting import newEvent
+# from .exporting import newEvent
 from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 import dateutil.rrule as rrule
@@ -15,7 +15,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER,TA_JUSTIFY
 from io import BytesIO
-from .exporting import EventFeed
+# from .exporting import EventFeed
 # import pdfkit,tempfile,zipfile,time desativado momentaneamente pois estou usando o reportlab para gerar PDFs
 
 
@@ -30,22 +30,23 @@ def make_pdf(self,request,queryset):
     designacoes = []
     header = Paragraph("Minhas Designacoes", styles["Heading1"])
     designacoes.append(header)
-    campos = [f.name for f in designacao._meta.get_fields()][3:]
-    print('estes são os campos %s'%campos)
+    # campos = [f.name for f in designacao._meta.get_fields()][3:] = extraindo o cabecalho
+    campos=['mes','dia','semana','Per 1','Per 1','Per 1','Per 2','Per 2','Per 3','Per 3','Per 4','Per 4','Per 5','Per 5']
+    # print('estes são os campos %s'%campos)
     valores.append(campos)
     for v in queryset:
         valores+=[str(v.mes),str(v.dia_mes),str(v.dia_semana),str(v.p1),str(v.p1_1),str(v.p1_2),str(v.p2),str(v.p2_1),str(v.p3),str(v.p3_1),str(v.p4),str(v.p4_1),str(v.p5),str(v.p5_1)],
-    print(valores)
+    # print(valores)
     t = Table(valores)
     t.setStyle(
         TableStyle([
-                ('GRID', (0, 0), (-1, -1), 1, colors.dodgerblue),
-                ('LINEBELOW', (0, 0), (-1, 0), 2, colors.darkblue),
-                ('BACKGROUND', (0, 0), (-1, 0), colors.dodgerblue),
-                ('ALIGN',(0,-1),(-1,-1),'CENTER'),
-                ('BOX', (0,0), (-1,-1), 0.20, colors.black),
-                ('VALIGN',(0,-1),(-1,-1),'MIDDLE'),
-                ]))
+            ('GRID', (0, 0), (-1, -1), 1, colors.dodgerblue),
+            ('LINEBELOW', (0, 0), (-1, 0), 2, colors.darkblue),
+            ('BACKGROUND', (0, 0), (-1, 0), colors.dodgerblue),
+            ('ALIGN',(0,-1),(-1,-1),'CENTER'),
+            ('BOX', (0,0), (-1,-1), 0.20, colors.black),
+            ('VALIGN',(0,-1),(-1,-1),'MIDDLE'),
+        ]))
     designacoes.append(t)
     doc.build(designacoes)
     response.write(buff.getvalue())
@@ -55,7 +56,7 @@ def make_pdf(self,request,queryset):
 
 def schedule(self,request,queryset):
     bla = 0
-    EventFeed()
+    # EventFeed()
     response = HttpResponse(content_type='text/calendar')
     serializers.serialize('xml',queryset,stream=response)
     # return HttpResponseRedirect('novoevento/',EventFeed())
@@ -68,11 +69,13 @@ def schedule(self,request,queryset):
 
 def set_irmao(self,request,queryset):
     updating = queryset.update(habilitado=True)
+    updating = queryset.update(dtModificado=timezone.now())
     mes = '%s registros '%updating
     self.message_user(request, '%s foram atualizadas.'%mes)
 
 def unset_irmao(self,request,queryset):
     updating = queryset.update(habilitado=False)
+    updating = queryset.update(dtModificado=timezone.now())
     mes = '%s registros '%updating
     self.message_user(request, '%s foram atualizadas.'%mes)
 
