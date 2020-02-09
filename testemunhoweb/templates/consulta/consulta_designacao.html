@@ -11,34 +11,38 @@
 
 {% block content %}
 <div id="content-main">
-    <form method="post" novalidate action="{%url 'consulta:retorno_designacao'%}">
+    <form method="post" class="post-form" action="{%url 'consulta:retorno_designacao'%}">
         {% csrf_token %}
-        {{form}}
-        <input type="submit" value="Localizar">
+        {{form.as_p}}
+        <input type="submit" value="Localizar" class="save btn btn-default">
     </form>
 </div>
 {% if form_retorno %}
 {% for retorno in form_retorno %}
 <div class="{% cycle 'row1' 'row2' %}">
-    {{retorno.ano}}
-    {{retorno.mes}}
-    {{retorno.dia_semana}}
-    {{retorno.p1}}
-    {{retorno.p1_1}}
-    {{retorno.p1_2}}
-    {{retorno.p2}}
-    {{retorno.p2_1}}
-    {{retorno.p2}}
-    {{retorno.p3}}
-    {{retorno.p3_1}}
-    {{retorno.p4}}
-    {{retorno.p4_1}}
-    {{retorno.p5}}
-    {{retorno.p5_1}}
-    </div>
-    {%endfor%}
-    {%endif%}
-    {% endblock %}
+    <table>
+        <tr>
+            <td>{{retorno.ano}}</td>
+            <td>{{retorno.mes}}</td>
+            <td>{{retorno.dia_mes}}</td>
+            <td>{{retorno.dia_semana}}</td>
+            <td>{{retorno.p1}}</td>
+            <td>{{retorno.p1_1}}</td>
+            <td>{{retorno.p1_2}}</td>
+            <td>{{retorno.p2}}</td>
+            <td>{{retorno.p2_1}}</td>
+            <td>{{retorno.p2}}</td>
+            <td>{{retorno.p3}}</td>
+            <td>{{retorno.p3_1}}</td>
+            <td>{{retorno.p4}}</td>
+            <td>{{retorno.p4_1}}</td>
+            <td>{{retorno.p5}}</td>
+            <td>{{retorno.p5_1}}</td>
+        </tr>
+</div>
+{%endfor%}
+{%endif%}
+{% endblock %}
 
 {% block sidebar %}
 <div id="content-related">

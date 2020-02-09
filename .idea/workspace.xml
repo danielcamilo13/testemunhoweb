@@ -7,103 +7,14 @@
       <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/exporting.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/exporting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/5.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/April.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/December.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/November.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/October.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/backlog.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/fevereiro.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/file.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/file_new.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/janeiroOficial.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/junho.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/lista_mes.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/logs/mes.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/CONTROLE DE CXS.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/December.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_0EthGmn.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_3chye4b.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_4zlYIYl.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_5eOiWDk.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_8crsW3p.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_EDXqoW6.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_G4Pf1zr.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_KfBuYzw.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_LEkhcvJ.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_NdzY3iO.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_O4nRiMY.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_PESgsqz.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_Pn3CFFT.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_QsUggOP.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_U7Pv8PO.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_Yg0N9wM.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_ZGYbeIM.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_iFnRRHG.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_jHRmBs7.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_kR3NPFR.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_kgR6D4Z.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_kp6glyG.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_vv8MLzh.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/November_wPjgl6q.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/October.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_ADhyXVE.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_BjoBwUR.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_DhRAu8B.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_HuAWqaS.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_U6X5bHS.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_YNMxhtn.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_YWrLoZD.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_fPNwRc7.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_n7iuxte.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_ozudi3B.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_vZfPSXg.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/backup de gastos até novembro_zMH1N2f.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/controle de gastos  exemplo.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/controle de gastos  exemplo_baOhHBt.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/controle de gastos  exemplo_cwEmJJ3.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/controle de gastos  exemplo_z1HRU0T.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - oficial (1).xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - oficial (1)_K16D0Kf.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - oficial.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - oficial_6AYAKWV.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - oficial_PbIT2U8.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017_aoM7Y2X.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017_edEoc6E.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017_n2GH41X.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017_pC7Wv8h.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/gastos - setembro de 2017_sXnbvaq.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL_HmIiuND.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL_P3MmhPo.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL_UvubVaq.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL_hbYVx8U.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/horas extras - AGSBRASIL_pMWjTl4.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/janeiroOficial.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/media/orcamento - Internet.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/consulta/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-end-line="29" selection-end-column="49" />
               <folding>
                 <element signature="e#24#79#0" expanded="true" />
               </folding>
@@ -123,47 +34,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="consulta_designacao.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="40" column="395" selection-start-line="40" selection-start-column="363" selection-end-line="40" selection-end-column="395" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+            <state relative-caret-position="526">
+              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+            <state relative-caret-position="526">
+              <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+              <folding>
+                <element signature="e#822#828#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+            <state relative-caret-position="127">
+              <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_tags.py" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+            <state relative-caret-position="255">
+              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -183,8 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dados_preenchimento</find>
-      <find>mandela</find>
       <find>consulta_irmaos</find>
       <find>PESSEGO</find>
       <find>retorno da minha excessao</find>
@@ -213,6 +149,8 @@
       <find>header</find>
       <find>caption</find>
       <find>breadcrumbs</find>
+      <find>irmao</find>
+      <find>design</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -299,9 +237,10 @@
         <option value="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/consulta/views.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" />
       </list>
     </option>
   </component>
@@ -315,10 +254,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="524" />
-    <option name="y" value="-13" />
+    <option name="x" value="723" />
+    <option name="y" value="40" />
     <option name="width" value="654" />
-    <option name="height" value="991" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -326,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,32 +287,14 @@
               <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
               <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="consulta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
-              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="consulta" type="462c0819:PsiDirectoryNode" />
+              <item name="cadastro" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -422,6 +342,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
@@ -582,57 +505,54 @@
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50161815" side_tool="true" weight="0.2318339" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.24798155" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49838188" weight="0.22257552" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.215959" />
-      <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.24798155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49838188" weight="0.22257552" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50161815" side_tool="true" weight="0.2318339" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22919819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2487725" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2487725" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.2487725" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" id="R Packages" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -663,9 +583,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/actions.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Lib/site-packages/django/template/context.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -788,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -896,50 +806,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="40" column="395" selection-start-line="40" selection-start-column="363" selection-end-line="40" selection-end-column="395" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-end-line="29" selection-end-column="49" />
           <folding>
             <element signature="e#24#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/models.py">
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="8" />
+        <state relative-caret-position="391">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/views.py">
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+        <state relative-caret-position="526">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding>
+            <element signature="e#822#828#1" expanded="true" />
           </folding>
         </state>
       </provider>
