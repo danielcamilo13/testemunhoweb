@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+{{mensagem}}
 <div id="content-main">
     <form method="post" class="post-form" action="{%url 'consulta:retorno_designacao'%}">
         {% csrf_token %}

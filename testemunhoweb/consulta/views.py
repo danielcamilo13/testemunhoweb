@@ -19,6 +19,8 @@ def consulta_dia(request):
 
 def consulta_designacao(request):
     locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
+    usuario = request.user.groups.values_list('name',flat=True)
+    print(usuario)
     hoje = timezone.now()
     m = hoje.month
     a = hoje.year
@@ -42,12 +44,19 @@ def retorno_designacao(request):
             i = [v['nm'] for v in irmaos.objects.values('nm').filter(pk=irmao)][0]
         if p=='1':
             print('Tabela completa')
+            mensagem = {'completa':'esta pesquisa nao filtra pelo nome, e sim somente pelo mes'}
+
             form_retorno = designacao.objects.values().filter(ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
-            return render(request, 'consulta/consulta_designacao.html', {'form_retorno': form_retorno})
+            return render(request, 'consulta/consulta_designacao.html', {'form_retorno': form_retorno,'mensagem':mensagem})
         elif p=='2':
             print('Tabela por pessoa')
-            form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
-            return render(request,'consulta/consulta_designacao.html',{'form_retorno':form_retorno})
+            
+            if len(irmao)<1:
+                mensagem = {'pessoa':'favor definir o irmao'}
+                form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
+            else:
+                form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
+            return render(request,'consulta/consulta_designacao.html',{'form_retorno':form_retorno,'mensagem':mensagem})
 
 def resultado(request):
     if 'dia' in request.POST:

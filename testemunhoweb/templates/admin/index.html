@@ -19,32 +19,24 @@
                 <th scope="row">Amanha : {{instance.content|next}}</th>
                 <td>&nbsp;</td>
                 <td></td>
-                <td>&nbsp;</td>
+
             </tr>
         </table>
         <table>
             <caption>CONSULTE SUA DESIGNACAO</caption>
             <tr class="model-{{ model.object_name|lower }}">
-                <th scope="row">Minha Designação</th>
-                <td>Ver minha designação</td>
-                <td></td>
-                <td><a href="{%url 'consulta:consulta_designacao'%}" class="viewlink">localizar</a></td>
+                <th scope="row"><a href="{%url 'consulta:consulta_designacao'%}" class="viewlink">Minhas designacoes</a></th>
                 <td>&nbsp;</td>
             </tr>
             <tr class="model-{{ model.object_name|lower }}">
-                <th scope="row">Voluntarios por Dias</th>
-                <th scope="row"></th>
-                <td>Voluntários a cada dia da semana</td>
-                <td>&nbsp;</td>
-                <td><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">localizar</a></td>
+                <th scope="row"><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">Voluntários por dia</a></th>
                 <td>&nbsp;</td>
             </tr>
             <tr class="model-{{ model.object_name|lower }}">
                 <th scope="row">Onde trabalhar</th>
-                <th scope="row"></th>
                 <td>Locais para Testemunho público</td>
-                <!--<td>&nbsp;</td>
-                <td><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">localizar</a></td>
+                <td>&nbsp;</td>
+                <!--<td><a href="{%url 'consulta:consulta_dia'%}" class="viewlink">localizar</a></td>
                 <td>&nbsp;</td> -->
             </tr>
         </table>
@@ -52,7 +44,6 @@
             <caption>ADMINISTRACAO</caption>
             <tr class="model-{{ model.object_name|lower }}">
                 <th scope="row">Gerar</th>
-                <th scope="row"></th>
                 <td>Crie uma planilha com as designações</td>
                 <td>&nbsp;</td>
                 <td><a href="{% url 'cadastro:designar' %}" class="addlink">Gerar</a></td>
@@ -60,7 +51,6 @@
             </tr>
             <tr class="model-{{ model.object_name|lower }}">
                 <th scope="row">Importar</th>
-                <th scope="row"></th>
                 <td>Importe sua planilha em formato xlsx para o TP</td>
                 <td>&nbsp;</td>
                 <td><a href="{%url 'cadastro:importar'%}" class="changelink">Importar</a></td>

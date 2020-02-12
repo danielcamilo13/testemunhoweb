@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-	path('admin/consulta/',include('consulta.urls',namespace='index')),
+	#path('admin/consulta/',include('consulta.urls',namespace='index')),
+	path('consulta/',include('consulta.urls')),
     path('cadastro/',include('cadastro.urls')),
     path('admin/calendario/',include('calendario.urls')),
     path(r'admin/', admin.site.urls),

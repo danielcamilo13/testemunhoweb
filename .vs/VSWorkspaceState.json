@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\testemunhoweb",
-    "\\testemunhoweb\\cadastro",
-    "\\testemunhoweb\\cadastro\\templatetags",
     "\\testemunhoweb\\consulta",
     "\\testemunhoweb\\templates",
+    "\\testemunhoweb\\templates\\admin",
+    "\\testemunhoweb\\templates\\admin\\auth",
+    "\\testemunhoweb\\templates\\admin\\includes",
     "\\testemunhoweb\\templates\\consulta"
   ],
-  "SelectedNode": "\\testemunhoweb\\consulta\\views.py",
+  "SelectedNode": "\\testemunhoweb\\templates\\admin\\edit_inline",
   "PreviewInSolutionExplorer": false
 }
