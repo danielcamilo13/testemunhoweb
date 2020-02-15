@@ -16,7 +16,8 @@
         <table>
             <caption>Veja as proximas designacoes</caption>
             <tr class="model-{{model.object_name|lower}}">
-                <th scope="row">Amanha : {{instance.content|next}}</th>
+                <!--<th scope="row">Amanha : {{instance.content|next}}</th>-->
+                <th scope="row">Amanha : {%for line in instance.content|next %}{{line}}{%endfor%}</th>
                 <td>&nbsp;</td>
                 <td></td>
 

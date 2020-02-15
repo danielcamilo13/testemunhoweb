@@ -3,12 +3,15 @@
     "",
     "\\testemunhoweb",
     "\\testemunhoweb\\consulta",
+    "\\testemunhoweb\\static\\admin",
+    "\\testemunhoweb\\static\\admin\\css",
     "\\testemunhoweb\\templates",
     "\\testemunhoweb\\templates\\admin",
     "\\testemunhoweb\\templates\\admin\\auth",
-    "\\testemunhoweb\\templates\\admin\\includes",
+    "\\testemunhoweb\\templates\\admin\\auth\\user",
+    "\\testemunhoweb\\templates\\admin\\widgets",
     "\\testemunhoweb\\templates\\consulta"
   ],
-  "SelectedNode": "\\testemunhoweb\\templates\\admin\\edit_inline",
+  "SelectedNode": "\\testemunhoweb\\consulta\\urls.py",
   "PreviewInSolutionExplorer": false
 }

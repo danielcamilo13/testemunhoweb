@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b708fdc-8558-413e-aeb8-948ba38cddf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno_designacao.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/VSWorkspaceState.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/slnx.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/testemunhoweb-projeto/v16/Browse.VC.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/consulta/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/consulta/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/data/testemunho.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/medias/backlog.log" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/medias/backlog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/medias/file.json" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/medias/file.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/medias/lista_mes.json" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/medias/lista_mes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/medias/mes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/medias/mes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" beforeDir="false" afterPath="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" afterDir="false" />
     </list>
@@ -22,23 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-end-line="29" selection-end-column="49" />
-              <folding>
-                <element signature="e#24#79#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="255">
+              <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -47,22 +44,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/forms.py">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            <state relative-caret-position="221">
+              <caret line="519" column="8" selection-start-line="519" selection-start-column="8" selection-end-line="519" selection-end-column="113" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#24#79#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno_designacao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="40" column="395" selection-start-line="40" selection-start-column="363" selection-end-line="40" selection-end-column="395" />
+            <state relative-caret-position="119">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="413" column="17" selection-start-line="413" selection-start-column="17" selection-end-line="413" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -70,40 +76,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-              <folding>
-                <element signature="e#822#828#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/models.py">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+            <state relative-caret-position="34">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py">
+        <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/agenda.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="375">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,19 +108,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>consulta_irmaos</find>
-      <find>PESSEGO</find>
-      <find>retorno da minha excessao</find>
-      <find>1,2,3</find>
-      <find>NAO ACHEI</find>
-      <find>NAO ACHEI NADA</find>
       <find>VALORES DO MEU DICIONARIO</find>
       <find>dia com excecao LOCALIZADA</find>
       <find>OLHA OS VALORES AQUI</find>
@@ -151,6 +139,12 @@
       <find>breadcrumbs</find>
       <find>irmao</find>
       <find>design</find>
+      <find>calendario</find>
+      <find>Json</find>
+      <find>getlist</find>
+      <find>request.post</find>
+      <find>text</find>
+      <find>input</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,26 +215,30 @@
         <option value="$PROJECT_DIR$/testemunhoweb/calendario.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/confirmacao.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/resultado.html" />
-        <option value="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/exporting.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/views.py" />
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/models.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/cadastro/designar.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/main/settings.py" />
-        <option value="$PROJECT_DIR$/testemunhoweb/main/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/calendario/urls.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/calendario/views.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/calendario/admin.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/calendario/models.py" />
-        <option value="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/admin.py" />
-        <option value="$PROJECT_DIR$/testemunhoweb/consulta/views.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/consulta/forms.py" />
-        <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" />
         <option value="$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py" />
         <option value="$PROJECT_DIR$/testemunhoweb/templates/admin/index.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/consulta/calendario.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/main/urls.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/consulta/agenda.py" />
+        <option value="$PROJECT_DIR$/testemunhoweb/consulta/urls.py" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css" />
+        <option value="$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno_designacao.html" />
+        <option value="$PROJECT_DIR$/testemunhoweb/consulta/views.py" />
       </list>
     </option>
   </component>
@@ -254,10 +252,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="723" />
-    <option name="y" value="40" />
-    <option name="width" value="654" />
-    <option name="height" value="788" />
+    <option name="x" value="-8" />
+    <option name="y" value="32" />
+    <option name="width" value="699" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -287,8 +285,42 @@
               <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
               <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
               <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
-              <item name="cadastro" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="testemunhoweb-projeto" type="b2602c69:ProjectViewProjectNode" />
+              <item name="testemunhoweb-projeto" type="462c0819:PsiDirectoryNode" />
+              <item name="testemunhoweb" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="consulta" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,6 +333,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -503,21 +536,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22844176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.24798155" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.24713585" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49838188" weight="0.22257552" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50161815" side_tool="true" weight="0.2318339" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4977307" weight="0.22094926" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50226927" side_tool="true" weight="0.22094926" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="12" />
@@ -530,25 +562,29 @@
       <window_info anchor="right" id="R Packages" order="6" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22919819" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22844176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.2487725" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" visible="true" weight="0.24713585" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49924356" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.2487725" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4977307" weight="0.22094926" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50226927" side_tool="true" weight="0.22094926" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,6 +609,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/testemunhoweb/consulta/urls.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -583,36 +625,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Lib/site-packages/django/template/context.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="269" selection-start-line="269" selection-end-line="269" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/importar2.html" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/base_site.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/gerador.html" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/planilha.html" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/google-calendar.py" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/apis/credentials.json" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/gapis/credential.json" />
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario.py" />
     <entry file="file://$PROJECT_DIR$/testemunhoweb/django_cal/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/django_cal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/django_cal/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -630,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/intermediate.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -646,13 +653,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/cadastro/importar_origem.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/resultado.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -665,13 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -733,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -761,20 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/login.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -782,13 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1479">
           <caret line="87" column="59" selection-start-line="87" selection-end-line="87" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11033">
-          <caret line="649" column="23" selection-start-line="649" selection-start-column="23" selection-end-line="649" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -806,24 +771,167 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="51" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/calendario.py" />
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="71" lean-forward="true" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="24" column="16" lean-forward="true" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/tratamento.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
+        <state relative-caret-position="526">
           <caret line="40" column="395" selection-start-line="40" selection-start-column="363" selection-end-line="40" selection-end-column="395" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/minha_designacao.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario-teste/calendario.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#106#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario-teste/google-calendar.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/calendario/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+        <state relative-caret-position="2414">
+          <caret line="145" column="7" selection-start-line="145" selection-start-column="7" selection-end-line="145" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/resultado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/django_cal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#24#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/main/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/agenda.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/static/admin/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="413" column="17" selection-start-line="413" selection-start-column="17" selection-end-line="413" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/retorno_designacao.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="29" column="49" lean-forward="true" selection-start-line="29" selection-end-line="29" selection-end-column="49" />
+        <state relative-caret-position="221">
+          <caret line="519" column="8" selection-start-line="519" selection-start-column="8" selection-end-line="519" selection-end-column="113" />
           <folding>
             <element signature="e#24#79#0" expanded="true" />
           </folding>
@@ -832,47 +940,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="255">
+          <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/consulta/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/consulta/consulta_designacao.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/cadastro/templatetags/custom_tags.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testemunhoweb/templates/admin/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="52" column="34" lean-forward="true" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#822#828#1" expanded="true" />
           </folding>
         </state>
       </provider>
