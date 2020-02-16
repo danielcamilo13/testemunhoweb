@@ -75,7 +75,7 @@ def excessoes(irmao,dia_mes):
     exc_dias = [exc for exc in irmaos.objects.values('excecao_dia').filter(nm=irmao)]
     for exc_item in exc_dias: # for para tirar o conteudo da lista
         for k,valores in exc_item.items(): #for para todos os valores que estao dentro do unico campo de excecao de dias
-            if valores != None:
+            if valores != None or valores != '':
                 for v in valores.split(','):
                     if int(v) == int(dia_mes):
                         print('dia com excecao LOCALIZADA {}***{}'.format(v,dia_mes))

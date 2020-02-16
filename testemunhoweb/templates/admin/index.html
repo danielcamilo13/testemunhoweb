@@ -44,18 +44,12 @@
         <table>
             <caption>ADMINISTRACAO</caption>
             <tr class="model-{{ model.object_name|lower }}">
-                <th scope="row">Gerar</th>
+                <th scope="row"><a href="{% url 'cadastro:designar' %}" class="addlink">Gerar</a></th>
                 <td>Crie uma planilha com as designações</td>
-                <td>&nbsp;</td>
-                <td><a href="{% url 'cadastro:designar' %}" class="addlink">Gerar</a></td>
-                <td>&nbsp;</td>
             </tr>
             <tr class="model-{{ model.object_name|lower }}">
-                <th scope="row">Importar</th>
+                <th scope="row"><a href="{%url 'cadastro:importar'%}" class="changelink">Importar</a></th>
                 <td>Importe sua planilha em formato xlsx para o TP</td>
-                <td>&nbsp;</td>
-                <td><a href="{%url 'cadastro:importar'%}" class="changelink">Importar</a></td>
-                <td>&nbsp;</td>
             </tr>
         </table>
     </div>
