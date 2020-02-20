@@ -78,24 +78,24 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 #SQL LITE
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'main','data','testemunho.sqlite3'),
-    }
-}
-
-# MYSQL LOCAL
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'testemunhodb',
-#         'USER': 'testemunhouser',
-#         'PASSWORD': '@Drsct098',
-#         'HOST': 'W10-PM03',   # Or an IP Address that your DB is hosted on
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'main','data','testemunho.sqlite3'),
 #     }
 # }
+
+# MYSQL LOCAL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'testemunhodb',
+        'USER': 'testemunhouser',
+        'PASSWORD': '@Drsct098',
+        'HOST': 'W10-PM03',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
 
 # MYSQL pythonanywhere
 # DATABASES = {

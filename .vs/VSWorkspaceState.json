@@ -3,15 +3,13 @@
     "",
     "\\testemunhoweb",
     "\\testemunhoweb\\consulta",
-    "\\testemunhoweb\\static\\admin",
-    "\\testemunhoweb\\static\\admin\\css",
-    "\\testemunhoweb\\templates",
+    "\\testemunhoweb\\medias",
+    "\\testemunhoweb\\static",
+    "\\testemunhoweb\\static\\consulta",
+    "\\testemunhoweb\\static\\consulta\\js",
     "\\testemunhoweb\\templates\\admin",
-    "\\testemunhoweb\\templates\\admin\\auth",
-    "\\testemunhoweb\\templates\\admin\\auth\\user",
-    "\\testemunhoweb\\templates\\admin\\widgets",
     "\\testemunhoweb\\templates\\consulta"
   ],
-  "SelectedNode": "\\testemunhoweb\\consulta\\urls.py",
+  "SelectedNode": "\\testemunhoweb\\consulta\\views.py",
   "PreviewInSolutionExplorer": false
 }

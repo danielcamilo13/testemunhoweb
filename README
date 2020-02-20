@@ -55,3 +55,15 @@ https://docs.djangoproject.com/en/3.0/intro/tutorial07/#customize-the-admin-inde
 
 calendario
 https://djangosnippets.org/snippets/2223/
+
+converter label month name to number
+https://stackoverflow.com/questions/3418050/month-name-to-month-number-and-vice-versa-in-python/21938128
+
+
+datetime - varias opções
+
+usei esta opcao para criar o calendario
+https://stackoverflow.com/questions/21140502/django-ical-attachment-causes-httpresponse-object-has-no-attribute-encode#new-answer
+
+todos os campos do arquivo calendário
+https://gist.github.com/meskarune/63600e64df56a607efa211b9a87fb443

@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n static %}
+{% load i18n static custom_export_tags %}
 {% block extrastyle %}{{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static " admin /css/dashboard.css" %}" />{% endblock %}
 {% block coltype %}colMS{% endblock %}
@@ -9,6 +9,11 @@
 <h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Publico</a></h1>
 {% endblock %}
 
+
+<script type="text/javascript"
+        src="{% static 'consulta/js/form.js' %}"
+</script>
+
 {% block content %}
 <div id="content-main">
     {%if mensagem%}
@@ -17,36 +22,36 @@
     {%endfor%}
     {%endif%}
 
-    <form action="{%url 'consulta:scheduler'%}" method="post" novalidate>
+    <form action="{%url 'consulta:scheduler'%}" method="post" class="post_form">
         {%csrf_token%}
-        <input type="submit" value="gravar na agenda do celular">
+        <input type="submit" value="Gravar na AGENDA" class="save btn btn-default">
         {% if form_retorno %}
         {% for retorno in form_retorno %}
         <div class="{% cycle 'row1' 'row2' %}">
             <table>
                 <tr>
-                    <td><input type ="text" class="width-dynamic proba dva" placeholder={{retorno.ano}}></td>
-                    <td><input type ="text" value={{retorno.mes}} size="value.length"></td>
-                    <td><input type ="text" value={{retorno.dia_mes}}></td>
-                    <td><input type ="text" value={{retorno.dia_semana}}></td>
-                    <td><input type ="text" value={{retorno.p1}}></td>
-                    <td><input type ="text" value={{retorno.p1_1}}></td>
-                    <td><input type ="text" value={{retorno.p1_2}}></td>
-                    <td><input type ="text" value={{retorno.p2}}></td>
-                    <td><input type ="text" value={{retorno.p2_1}}></td>
-                    <td><input type ="text" value={{retorno.p2}}></td>
-                    <td><input type ="text" value={{retorno.p3}}></td>
-                    <td><input type ="text" value={{retorno.p3_1}}></td>
-                    <td><input type ="text" value={{retorno.p4}}></td>
-                    <td><input type ="text" value={{retorno.p4_1}}></td>
-                    <td><input type ="text" value={{retorno.p5}}></td>
-                    <td><input type ="text" value={{retorno.p5_1}}></td>
-
+                    <td>{{retorno.ano}}</td>
+                    <td>{{retorno.mes}}</td>
+                    <td>{{retorno.dia_mes}}</td>
+                    <td>{{retorno.dia_semana}}</td>
+                    <td>{{retorno.p1}}</td>
+                    <td>{{retorno.p1_1}}</td>
+                    <td>{{retorno.p1_2}}</td>
+                    <td>{{retorno.p2}}</td>
+                    <td>{{retorno.p2_1}}</td>
+                    <td>{{retorno.p2}}</td>
+                    <td>{{retorno.p3}}</td>
+                    <td>{{retorno.p3_1}}</td>
+                    <td>{{retorno.p4}}</td>
+                    <td>{{retorno.p4_1}}</td>
+                    <td>{{retorno.p5}}</td>
+                    <td>{{retorno.p5_1}}</td>
                 </tr>
                 {%endfor%}
                 {%endif%}
         </div>
-
     </form>
 </div>
 {%endblock%}
+
+

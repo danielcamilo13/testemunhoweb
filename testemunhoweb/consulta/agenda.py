@@ -7,15 +7,10 @@ from calendario.models import calendario
 
 class EventFeed(ICalFeed):
     """
-
     A simple event calender
-
     """
-
     product_id = '-//example.com//Example//EN'
-
     timezone = 'UTC'
-
     file_name = "evento.ics"
 
     def items(self):
@@ -35,6 +30,8 @@ class EventFeed(ICalFeed):
 
     def item_link(self, item):
         return "http://www.google.de"
+    def file_name(self,obj):
+        return 'feed_%s'%obj.id
 
 
 '''

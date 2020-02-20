@@ -11,6 +11,12 @@
 
 {% block content %}
 <div id="content-main">
+    {%if mensagem%}<p> Tipo de pesquisa selecionada: {{mensagem}}</p>{%endif%}
+
+
+
+    <h3>Usuario: {{request.user}}. Grupo: {{grupo}}</h3>
+
     <form method="post" class="post-form" action="{%url 'consulta:retorno_designacao'%}">
         {% csrf_token %}
         {{form.as_p}}
@@ -18,8 +24,6 @@
     </form>
 </div>
 
-<br>
-<a href="{%url 'consulta:scheduler'%}">clique aqui</a>
 <br>
 <a href="../../consulta/agenda/evento.ics">clique aqui</a>
 
