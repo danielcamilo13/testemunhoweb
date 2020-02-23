@@ -25,10 +25,31 @@
     <form action="{%url 'consulta:scheduler'%}" method="post" class="post_form">
         {%csrf_token%}
         <input type="submit" value="Gravar na AGENDA" class="save btn btn-default">
+        <div class="{% cycle 'row1' 'row2' %}">
+            <table>
+                <tr>
+                    <th>ano</th>
+                    <th>mes</th>
+                    <th>dia_mes</th>
+                    <th>dia_semana</th>
+                    <th>Per 1</th>
+                    <th>Per 1</th>
+                    <th>Per 1</th>
+                    <th>Per 2</th>
+                    <th>Per 2</th>
+                    <th>Per 3</th>
+                    <th>Per 3</th>
+                    <th>Per 4</th>
+                    <th>Per 4</th>
+                    <th>Per 5</th>
+                    <th>Per 5</th>
+                </tr>
+
+        </div>
+		
         {% if form_retorno %}
         {% for retorno in form_retorno %}
         <div class="{% cycle 'row1' 'row2' %}">
-            <table>
                 <tr>
                     <td>{{retorno.ano}}</td>
                     <td>{{retorno.mes}}</td>
@@ -39,7 +60,6 @@
                     <td>{{retorno.p1_2}}</td>
                     <td>{{retorno.p2}}</td>
                     <td>{{retorno.p2_1}}</td>
-                    <td>{{retorno.p2}}</td>
                     <td>{{retorno.p3}}</td>
                     <td>{{retorno.p3_1}}</td>
                     <td>{{retorno.p4}}</td>
@@ -51,7 +71,9 @@
                 {%endif%}
         </div>
     </form>
+	</table>
 </div>
 {%endblock%}
+{% block nav-global %}{% endblock %}
 
 
