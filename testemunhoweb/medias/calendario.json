@@ -1,116 +1,152 @@
 [
     {
-        "id": 533,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Segunda-feira",
-        "dia_mes": 3,
-        "p1": "Aline Lima",
-        "p1_1": "Jane",
-        "p1_2": "",
-        "p2": "Graca",
-        "p2_1": "Lurdes",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Antonio",
-        "p4_1": "Icaro",
-        "p5": "Amintas",
-        "p5_1": "Dario"
+        "dia": "2020-02-03 00:00:00",
+        "semana": "Segunda-feira",
+        "periodo1": [
+            "Aline Lima",
+            "Jane",
+            ""
+        ],
+        "periodo2": [
+            "Graca",
+            "Lurdes"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Antonio",
+            "Icaro"
+        ],
+        "periodo5": [
+            "Amintas",
+            "Dario"
+        ]
     },
     {
-        "id": 535,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Quarta-feira",
-        "dia_mes": 5,
-        "p1": "Patricia Rodrigues",
-        "p1_1": "Aline Lima",
-        "p1_2": "",
-        "p2": "Jessica",
-        "p2_1": "Antonio",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Isabele",
-        "p4_1": "Lurdes",
-        "p5": "",
-        "p5_1": ""
+        "dia": "2020-02-05 00:00:00",
+        "semana": "Quarta-feira",
+        "periodo1": [
+            "Patricia Rodrigues",
+            "Aline Lima",
+            ""
+        ],
+        "periodo2": [
+            "Jessica",
+            "Antonio"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Isabele",
+            "Lurdes"
+        ],
+        "periodo5": [
+            "",
+            ""
+        ]
     },
     {
-        "id": 537,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Sexta-feira",
-        "dia_mes": 7,
-        "p1": "Antonio",
-        "p1_1": "Daniel",
-        "p1_2": "",
-        "p2": "Aline Melo",
-        "p2_1": "Daiana",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Aline Lima",
-        "p4_1": "Isabele",
-        "p5": "Diego",
-        "p5_1": "Clayton"
+        "dia": "2020-02-07 00:00:00",
+        "semana": "Sexta-feira",
+        "periodo1": [
+            "Antonio",
+            "Daniel",
+            ""
+        ],
+        "periodo2": [
+            "Aline Melo",
+            "Daiana"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Aline Lima",
+            "Isabele"
+        ],
+        "periodo5": [
+            "Diego",
+            "Clayton"
+        ]
     },
     {
-        "id": 545,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Segunda-feira",
-        "dia_mes": 17,
-        "p1": "Aline Lima",
-        "p1_1": "Jane",
-        "p1_2": "",
-        "p2": "Graca",
-        "p2_1": "Lurdes",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Antonio",
-        "p4_1": "Icaro",
-        "p5": "Amintas",
-        "p5_1": "Dario"
+        "dia": "2020-02-17 00:00:00",
+        "semana": "Segunda-feira",
+        "periodo1": [
+            "Aline Lima",
+            "Jane",
+            ""
+        ],
+        "periodo2": [
+            "Graca",
+            "Lurdes"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Antonio",
+            "Icaro"
+        ],
+        "periodo5": [
+            "Amintas",
+            "Dario"
+        ]
     },
     {
-        "id": 547,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Quarta-feira",
-        "dia_mes": 19,
-        "p1": "Aline Lima",
-        "p1_1": "Lindoia",
-        "p1_2": "",
-        "p2": "Antonio",
-        "p2_1": "Icaro",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Isabele",
-        "p4_1": "Lurdes",
-        "p5": "",
-        "p5_1": ""
+        "dia": "2020-02-19 00:00:00",
+        "semana": "Quarta-feira",
+        "periodo1": [
+            "Aline Lima",
+            "Lindoia",
+            ""
+        ],
+        "periodo2": [
+            "Antonio",
+            "Icaro"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Isabele",
+            "Lurdes"
+        ],
+        "periodo5": [
+            "",
+            ""
+        ]
     },
     {
-        "id": 549,
-        "csrfmiddlewaretoken": "1",
-        "ano": 2020,
-        "mes": "fevereiro",
-        "dia_semana": "Sexta-feira",
-        "dia_mes": 21,
-        "p1": "Antonio",
-        "p1_1": "Daniel",
-        "p1_2": "",
-        "p2": "Aline Melo",
-        "p2_1": "Daiana",
-        "p3": "",
-        "p3_1": "",
-        "p4": "Aline Lima",
-        "p4_1": "EMPTY",
-        "p5": "Clayton",
-        "p5_1": "Diego"
+        "dia": "2020-02-21 00:00:00",
+        "semana": "Sexta-feira",
+        "periodo1": [
+            "Antonio",
+            "Daniel",
+            ""
+        ],
+        "periodo2": [
+            "Aline Melo",
+            "Daiana"
+        ],
+        "periodo3": [
+            "",
+            ""
+        ],
+        "periodo4": [
+            "Aline Lima",
+            "EMPTY"
+        ],
+        "periodo5": [
+            "Clayton",
+            "Diego"
+        ]
     }
 ]

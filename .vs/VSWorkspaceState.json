@@ -3,11 +3,7 @@
     "",
     "\\testemunhoweb",
     "\\testemunhoweb\\consulta",
-    "\\testemunhoweb\\medias",
-    "\\testemunhoweb\\static",
-    "\\testemunhoweb\\static\\consulta",
-    "\\testemunhoweb\\static\\consulta\\js",
-    "\\testemunhoweb\\templates\\admin",
+    "\\testemunhoweb\\templates",
     "\\testemunhoweb\\templates\\consulta"
   ],
   "SelectedNode": "\\testemunhoweb\\consulta\\views.py",

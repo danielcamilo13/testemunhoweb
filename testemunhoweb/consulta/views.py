@@ -47,6 +47,7 @@ def consulta_designacao(request):
         return render(request,'consulta/consulta_designacao.html',{'form':form,'grupo':grupo})
 
 def retorno_designacao(request):
+    locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     BASE_DIR = os.path.join(BASE,'medias')
     if request.method=='POST':
@@ -55,10 +56,6 @@ def retorno_designacao(request):
         a = request.POST['ano']
         p = request.POST['tpPesquisa']
         mes = calendar.month_name[m]
-
-        # html = urlopen('http://127.0.0.1:10024/admin/consulta/retorno_designacao/')
-        # res = BeautifulSoup(html.read(), 'html5lib')
-        # print(res.title)
 
         if len(irmao)==0:
             i=0
@@ -76,8 +73,21 @@ def retorno_designacao(request):
                 mensagem = {'irmao':'Nome do irmao selecionado %s.'%str(i)}
                 form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
                 contexto = list(form_retorno)
+                contexto_periodos =[]
+                for ln in contexto:
+                    mes = time.strptime(ln['mes'], "%B").tm_mon
+                    day_b = '{}-{}-{}'.format(ln['dia_mes'],mes,ln['ano'])
+                    day_a = datetime.strptime(day_b,'%d-%m-%Y')
+                    ctxt = {'dia':str(day_a),'semana':ln['dia_semana'],
+                            'periodo1':[ln['p1'],ln['p1_1'],ln['p1_2']],
+                            'periodo2':[ln['p2'],ln['p2_1']],
+                            'periodo3':[ln['p3'],ln['p3_1']],
+                            'periodo4':[ln['p4'],ln['p4_1']],
+                            'periodo5':[ln['p5'],ln['p5_1']]}
+                    contexto_periodos.append(ctxt)
+
                 with open(os.path.join(BASE_DIR,'calendario.json'),'w') as fl:
-                    json.dump(contexto,fl,indent=4)
+                    json.dump(contexto_periodos,fl,indent=4)
             return render(request,'consulta/retorno_designacao.html',{'form_retorno':form_retorno,'mensagem':mensagem})
     else:
         mensagem = {'semretorno':'sem resposta'}
@@ -122,21 +132,24 @@ def resultado(request):
 
 
 def create_ics(data):
+    #locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
     cal = vobject.iCalendar()
     utc = vobject.icalendar.utc
-    dia_agenda = datetime(data['dia'].year, data['dia'].month, data['dia'].day, tzinfo = utc)
+    d = datetime.strptime(data['dia'],'%Y-%m-%d %H:%M:%S')
+    print('dia {} mes {} ano {} '.format(d.day,d.month,d.year))
+    dia_agenda = datetime(d.year, d.month, d.day,tzinfo=utc)
+    #dia_agenda = datetime(data['dia'].year, data['dia'].month, data['dia'].day, tzinfo = utc)
     print('variavel dia agenda {}'.format(dia_agenda))
     vevent = cal.add('vevent')
     start = cal.vevent.add('dtstart')
     #start.value = datetime(2006, 2, 16, tzinfo = utc)
-    start.value = dia_agenda
+    start.value = datetime(d.year,d.month,d.day,tzinfo=utc)
     sum = cal.vevent.add('summary')
     sum.value= data['tp']
     desc = cal.vevent.add('description')
-    desc.value = data['periodos']
-
-
-
+    desc.value = 'valor da descricao'
+    #desc.value = data['periodo1']
+    return cal.serialize()
     #cal.add('method').value = 'PUBLISH'
     #vevent = cal.add('vevent')
     #vevent.add('dtstart').value = '20050404T080000'
@@ -144,36 +157,36 @@ def create_ics(data):
     #vevent.add('dtend').value = dia_agenda
     #vevent.add('dtstamp').value = dia_agenda
     #vevent.add('summary').value = 'Testemunho publico - minha designacao'
-    return cal.serialize()
+
 
     
 def scheduler(request):
-    locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
+    if request.method=='POST':
+        print(request.POST.getlist('dia'))
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     BASE_DIR = os.path.join(BASE,'medias')
-    context = RequestContext(request)
-    context_dict = {}
+    #context = RequestContext(request)
+    #context_dict = {}
     lista_calendario = []
-    contexto = {}
-    contxt = {}
+    todos_agendamentos=''
+    #contexto = {}
     with open(os.path.join(BASE_DIR,'calendario.json')) as fl:
         calendario = json.load(fl)
         for ln in calendario:
-            contexto=ln
-            mes = time.strptime(ln['mes'], "%B").tm_mon
-            day_bef = '{}-{}-{}'.format(ln['dia_mes'],mes,ln['ano'])
-            day_af = datetime.strptime(day_bef,'%d-%m-%Y')
-            periodos = str(ln['p1'])+'-'+str(ln['p1_1'])+'-'+str(ln['p1_2'])+'-'+str(ln['p2'])+'-'+str(ln['p2_1'])+'-'+str(ln['p3'])+'-'+str(ln['p3_1'])+'-'+str(ln['p4'])+'-'+str(ln['p4_1'])+'-'+str(ln['p5'])+'-'+str(ln['p5_1'])
-            contxt={'dia':day_af,'tp':'Testemunho publico - minha designacao','periodos':periodos}
-            #lista_calendario.append(contexto)
-            lista_calendario.append(contxt)
+            contexto={'dia':ln['dia'],'tp':'Testemunho publico - minha designacao','periodo1':ln['periodo1']}
+            lista_calendario.append(contexto)
+
     if isinstance(lista_calendario,list):
         for item in lista_calendario:
             grava_calendario = create_ics(item)
-            response = HttpResponse(grava_calendario,content_type='text/calendar')
-            response['Filename']=os.path.join(BASE_DIR,'calendario_hoje.ics')
-            response['Content-Disposition']='attachment;filename=filename.ics'
-            return response
+            todos_agendamentos+=grava_calendario
+            print('gravar no calendario {}'.format(grava_calendario))
+            print('gravar no calendario {}'.format(type(grava_calendario)))
+
+        response = HttpResponse(todos_agendamentos,content_type='text/calendar')
+        response['Filename']=os.path.join(BASE_DIR,'calendario_hoje.ics')
+        response['Content-Disposition']='attachment;filename=filename.ics'
+    return response
     
     #if request.method=='POST':
     #    print('retorno POST com sucesso')
