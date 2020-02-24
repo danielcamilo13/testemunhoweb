@@ -142,7 +142,6 @@ def create_ics(data):
     print('variavel dia agenda {}'.format(dia_agenda))
     vevent = cal.add('vevent')
     start = cal.vevent.add('dtstart')
-    #start.value = datetime(2006, 2, 16, tzinfo = utc)
     start.value = datetime(d.year,d.month,d.day,tzinfo=utc)
     sum = cal.vevent.add('summary')
     sum.value= data['tp']
