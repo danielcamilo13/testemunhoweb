@@ -20,7 +20,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from django_ical import feedgenerator
 from django.template.defaultfilters import slugify
-import calendar,locale, requests,csv,json,os,vobject,time,pytz
+import calendar,locale, requests,csv,json,os,vobject,time,pytz,re
 from icalendar import Calendar, Event
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 from django.views.generic import View
@@ -63,32 +63,40 @@ def retorno_designacao(request):
             i = [v['nm'] for v in irmaos.objects.values('nm').filter(pk=irmao)][0]
         if p=='1': #Pesquisa completa
             mensagem = {'completa':'Tipo de Pesquisa - COMPLETA'}
-            form_retorno = designacao.objects.values().filter(ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
-            return render(request, 'consulta/retorno_designacao.html', {'form_retorno': form_retorno,'mensagem':mensagem})
+            form = designacao.objects.values().filter(ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
+            return render(request, 'consulta/retorno_designacao.html', {'form': form,'mensagem':mensagem})
         elif p=='2':  #Pesquisa por Irmao
             if len(irmao)<1:
                 mensagem = {'pessoa':'favor definir o irmao'}
-                form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
+                form = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
             else:
-                mensagem = {'irmao':'Nome do irmao selecionado %s.'%str(i)}
-                form_retorno = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
-                contexto = list(form_retorno)
-                contexto_periodos =[]
+                mensagem = {'irmao':str(i)}
+                form = designacao.objects.values().filter(Q(p1=i)|Q(p1_1=i)|Q(p1_2=i)|Q(p2=i)|Q(p2_1=i)|Q(p3=i)|Q(p3_1=i)|Q(p4=i)|Q(p4_1=i)|Q(p5=i)|Q(p5_1=i),ano=a,mes=mes).order_by('ano','mes','dia_mes','dia_semana')
+                f_filter = [ {f['ano'],f['mes'],f['dia_semana'],f['dia_mes']} for f in form]
+                contexto = form
+                ctxt_periodos =[]
+                ctxt_periodos_filtro = []
                 for ln in contexto:
                     mes = time.strptime(ln['mes'], "%B").tm_mon
                     day_b = '{}-{}-{}'.format(ln['dia_mes'],mes,ln['ano'])
                     day_a = datetime.strptime(day_b,'%d-%m-%Y')
-                    ctxt = {'dia':str(day_a),'semana':ln['dia_semana'],
+                    ctxt = {i:{'dia':str(day_a),'semana':ln['dia_semana'],
                             'periodo1':[ln['p1'],ln['p1_1'],ln['p1_2']],
                             'periodo2':[ln['p2'],ln['p2_1']],
                             'periodo3':[ln['p3'],ln['p3_1']],
                             'periodo4':[ln['p4'],ln['p4_1']],
-                            'periodo5':[ln['p5'],ln['p5_1']]}
-                    contexto_periodos.append(ctxt)
-
+                            'periodo5':[ln['p5'],ln['p5_1']]}}
+                    ctxt_periodos.append(ctxt)
+                #abrir a lista gerada e na lista foi feito um IF com a chave principal e os conteudos se igualarem
+                for linhas in ctxt_periodos:
+                    for ch,valores in linhas.items():
+                        f = [{k:v} for k,v in valores.items() if k=='dia' or k=='semana' or re.search(i,str(v))]
+                        ctxt_periodos_filtro.append(f)
+                            
                 with open(os.path.join(BASE_DIR,'calendario.json'),'w') as fl:
-                    json.dump(contexto_periodos,fl,indent=4)
-            return render(request,'consulta/retorno_designacao.html',{'form_retorno':form_retorno,'mensagem':mensagem})
+                    json.dump(ctxt_periodos,fl,indent=4)
+            form_filtro = ctxt_periodos_filtro
+            return render(request,'consulta/retorno_designacao.html',{'form_filtro':form_filtro,'mensagem':mensagem})
     else:
         mensagem = {'semretorno':'sem resposta'}
         return render(request,'consulta/retorno_designacao',{'mensagem':mensagem})
@@ -132,22 +140,18 @@ def resultado(request):
 
 
 def create_ics(data):
-    #locale.setlocale(locale.LC_ALL,'pt_BR.UTF-8')
     cal = vobject.iCalendar()
     utc = vobject.icalendar.utc
     d = datetime.strptime(data['dia'],'%Y-%m-%d %H:%M:%S')
-    print('dia {} mes {} ano {} '.format(d.day,d.month,d.year))
     dia_agenda = datetime(d.year, d.month, d.day,tzinfo=utc)
-    #dia_agenda = datetime(data['dia'].year, data['dia'].month, data['dia'].day, tzinfo = utc)
-    print('variavel dia agenda {}'.format(dia_agenda))
+    cal.add('method').value = 'PUBLISH'
     vevent = cal.add('vevent')
     start = cal.vevent.add('dtstart')
     start.value = datetime(d.year,d.month,d.day,tzinfo=utc)
     sum = cal.vevent.add('summary')
     sum.value= data['tp']
     desc = cal.vevent.add('description')
-    desc.value = 'valor da descricao'
-    #desc.value = data['periodo1']
+    desc.value = data['periodo']
     return cal.serialize()
     #cal.add('method').value = 'PUBLISH'
     #vevent = cal.add('vevent')
@@ -161,26 +165,32 @@ def create_ics(data):
     
 def scheduler(request):
     if request.method=='POST':
-        print(request.POST.getlist('dia'))
+        print(request.session)
     BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     BASE_DIR = os.path.join(BASE,'medias')
     #context = RequestContext(request)
-    #context_dict = {}
     lista_calendario = []
     todos_agendamentos=''
-    #contexto = {}
     with open(os.path.join(BASE_DIR,'calendario.json')) as fl:
         calendario = json.load(fl)
-        for ln in calendario:
-            contexto={'dia':ln['dia'],'tp':'Testemunho publico - minha designacao','periodo1':ln['periodo1']}
-            lista_calendario.append(contexto)
+        for irmao in calendario:
+            for k,pers in irmao.items():
+                print('Irmao {}'.format(k))
+                sel = k
+                for per,val in pers.items():
+                    print('Periodo {}'.format(per,val))
+                    if per =='dia':
+                        dd=val
+                    if re.search(sel,str(val)):
+                        print('registro localizado {}'.format(val))
+                        contexto={'dia':dd,'tp':'Testemunho publico - designacao de '+str(sel),'periodo':str(per)+'='+str(val[0])}
+                        lista_calendario.append(contexto)
 
     if isinstance(lista_calendario,list):
         for item in lista_calendario:
             grava_calendario = create_ics(item)
             todos_agendamentos+=grava_calendario
             print('gravar no calendario {}'.format(grava_calendario))
-            print('gravar no calendario {}'.format(type(grava_calendario)))
 
         response = HttpResponse(todos_agendamentos,content_type='text/calendar')
         response['Filename']=os.path.join(BASE_DIR,'calendario_hoje.ics')

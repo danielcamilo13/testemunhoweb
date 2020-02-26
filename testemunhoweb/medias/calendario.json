@@ -1,152 +1,83 @@
 [
     {
-        "dia": "2020-02-03 00:00:00",
-        "semana": "Segunda-feira",
-        "periodo1": [
-            "Aline Lima",
-            "Jane",
-            ""
-        ],
-        "periodo2": [
-            "Graca",
-            "Lurdes"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Antonio",
-            "Icaro"
-        ],
-        "periodo5": [
-            "Amintas",
-            "Dario"
-        ]
+        "Aline Melo": {
+            "dia": "2020-10-02 00:00:00",
+            "semana": "Sexta-feira",
+            "periodo1": [
+                "Antonio",
+                "Daniel",
+                ""
+            ],
+            "periodo2": [
+                "Aline Melo",
+                "Daiana"
+            ],
+            "periodo3": [
+                "",
+                ""
+            ],
+            "periodo4": [
+                "Aline Lima",
+                "Isabele"
+            ],
+            "periodo5": [
+                "Diego",
+                "Clayton"
+            ]
+        }
     },
     {
-        "dia": "2020-02-05 00:00:00",
-        "semana": "Quarta-feira",
-        "periodo1": [
-            "Patricia Rodrigues",
-            "Aline Lima",
-            ""
-        ],
-        "periodo2": [
-            "Jessica",
-            "Antonio"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Isabele",
-            "Lurdes"
-        ],
-        "periodo5": [
-            "",
-            ""
-        ]
+        "Aline Melo": {
+            "dia": "2020-10-16 00:00:00",
+            "semana": "Sexta-feira",
+            "periodo1": [
+                "Antonio",
+                "Daniel",
+                ""
+            ],
+            "periodo2": [
+                "Aline Melo",
+                "Daiana"
+            ],
+            "periodo3": [
+                "",
+                ""
+            ],
+            "periodo4": [
+                "Aline Lima",
+                "EMPTY"
+            ],
+            "periodo5": [
+                "Clayton",
+                "Diego"
+            ]
+        }
     },
     {
-        "dia": "2020-02-07 00:00:00",
-        "semana": "Sexta-feira",
-        "periodo1": [
-            "Antonio",
-            "Daniel",
-            ""
-        ],
-        "periodo2": [
-            "Aline Melo",
-            "Daiana"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Aline Lima",
-            "Isabele"
-        ],
-        "periodo5": [
-            "Diego",
-            "Clayton"
-        ]
-    },
-    {
-        "dia": "2020-02-17 00:00:00",
-        "semana": "Segunda-feira",
-        "periodo1": [
-            "Aline Lima",
-            "Jane",
-            ""
-        ],
-        "periodo2": [
-            "Graca",
-            "Lurdes"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Antonio",
-            "Icaro"
-        ],
-        "periodo5": [
-            "Amintas",
-            "Dario"
-        ]
-    },
-    {
-        "dia": "2020-02-19 00:00:00",
-        "semana": "Quarta-feira",
-        "periodo1": [
-            "Aline Lima",
-            "Lindoia",
-            ""
-        ],
-        "periodo2": [
-            "Antonio",
-            "Icaro"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Isabele",
-            "Lurdes"
-        ],
-        "periodo5": [
-            "",
-            ""
-        ]
-    },
-    {
-        "dia": "2020-02-21 00:00:00",
-        "semana": "Sexta-feira",
-        "periodo1": [
-            "Antonio",
-            "Daniel",
-            ""
-        ],
-        "periodo2": [
-            "Aline Melo",
-            "Daiana"
-        ],
-        "periodo3": [
-            "",
-            ""
-        ],
-        "periodo4": [
-            "Aline Lima",
-            "EMPTY"
-        ],
-        "periodo5": [
-            "Clayton",
-            "Diego"
-        ]
+        "Aline Melo": {
+            "dia": "2020-10-30 00:00:00",
+            "semana": "Sexta-feira",
+            "periodo1": [
+                "Antonio",
+                "Daniel",
+                ""
+            ],
+            "periodo2": [
+                "Aline Melo",
+                "Daiana"
+            ],
+            "periodo3": [
+                "",
+                ""
+            ],
+            "periodo4": [
+                "Robson",
+                "EMPTY"
+            ],
+            "periodo5": [
+                "Clayton",
+                "Diego"
+            ]
+        }
     }
 ]
