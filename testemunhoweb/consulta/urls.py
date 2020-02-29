@@ -13,5 +13,7 @@ urlpatterns =[
     path('retorno_designacao/',views.retorno_designacao,name='retorno_designacao'),
     path('resultado/',views.resultado,name='resultado'),
     path('agenda/evento.ics',EventFeed()),
-    path('retorno/',views.scheduler,name='scheduler')
+    path('retorno/',views.scheduler,name='scheduler'),
+    path('ajax/',views.ajax_test,name='ajax_test'),
+    path('gerar_pdf',views.gerar_pdf,name='gerar_pdf')
 ]

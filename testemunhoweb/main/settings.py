@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost','carldarkmsn.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'calendario.apps.CalendarioConfig',
     'consulta.apps.ConsultaConfig',
     'cadastro.apps.CadastroConfig',
     'django.contrib.admin',

@@ -25,6 +25,8 @@ from icalendar import Calendar, Event
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
 from django.views.generic import View
 
+from .tratamento import make_pdf
+
 def index(request):
     aviso = 'aviso'
     return render(request,'consulta/index.html')
@@ -205,3 +207,29 @@ def scheduler(request):
     #else:
     #    return render_to_response("consulta/retorno.html", context_dict, context)
 
+def gerar_pdf(request):
+    BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    BASE_DIR = os.path.join(BASE,'medias')
+    #context = RequestContext(request)
+    lista_calendario = []
+    todos_agendamentos=''
+    with open(os.path.join(BASE_DIR,'calendario.json')) as fl:
+        calendario = json.load(fl)
+        for irmao in calendario:
+            for k,pers in irmao.items():
+                print('Irmao {}'.format(k))
+                sel = k
+                for per,val in pers.items():
+                    print('Periodo {}'.format(per,val))
+                    if per =='dia':
+                        dd=val
+                    if re.search(sel,str(val)):
+                        print('registro localizado {}'.format(val))
+                        contexto={'dia':dd,'tp':'Testemunho publico - designacao de '+str(sel),'periodo':str(per)+'='+str(val[0])}
+                        lista_calendario.append(contexto)
+    print('Lista de calendários {}'.format(lista_calendario))
+    #gerando_pdf=make_pdf()
+    return HttpResponse('atenção')
+def ajax_test(request):
+    context={'ajax','retorno de ajax'}
+    return render(request,'consulta/placed.html',{'context':context})

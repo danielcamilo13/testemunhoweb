@@ -41,10 +41,6 @@ def consulta_irmao_dia():
     orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True').order_by('-dia_semana')
     return orm_dia
 
-# def consulta_irmaos():
-#     orm_irmaos = irmaos.objects.all().order_by('nm')
-#     return orm_irmaos
-
 def consulta_irmaos():
     orm_dia = dias.objects.select_related('irmao').values('dia_semana','irmao','irmao__nm','p1','p2','p3','p4','p5','p1_1','p1_2','p2_1','p3_1','p4_1','p5_1','irmao__habilitado','irmao__estado_civil','irmao__conjuge','irmao__gr','adv','irmao__maximo','preferencial','irmao__trio','irmao__privilegio','irmao__dianteira','irmao__excecao_dia','irmao__excecao_nome').filter(irmao__habilitado='True').order_by('irmao__nm')
     return orm_dia

@@ -1,5 +1,5 @@
 {% extends "admin/base_site.html" %}
-{% load i18n static %}
+{% load i18n static custom_tags%}
 {% block extrastyle %}{{ block.super }}
 <link rel="stylesheet" type="text/css" href="{% static " admin /css/dashboard.css" %}" />{% endblock %}
 {% block coltype %}colMS{% endblock %}
@@ -11,20 +11,38 @@
 
 {% block content %}
 <div id="content-main">
+
+    <div class="app-{{ app.app_label }} module">
+        <table>
+            <caption>Veja as proximas designacoes</caption>
+            <tr class="model-{{model.object_name|lower}}">
+                <th scope="row">Amanha : {%for line in instance.content|next %}{{line}}{%endfor%}</th>
+                <td>&nbsp;</td>
+                <td></td>
+
+            </tr>
+        </table>
+    </div>
+
+
     {%if mensagem%}<p> Tipo de pesquisa selecionada: {{mensagem}}</p>{%endif%}
 
+    <div class="app-{{ app.app_label }} module">
+        <table>
+            <caption>Faça sua pesquisa aqui</caption>
+            <tr class="model-{{model.object_name|lower}}">
+                <th scope="row"><h3>Usuario: {{request.user}}. Grupo: {{grupo}}</h3></th>
+                </tr>
+</table>
+            <form method="post" class="post-form" action="{%url 'consulta:retorno_designacao'%}">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Localizar" class="save btn btn-default">
+            </form>
+    </div>
 
-
-    <h3>Usuario: {{request.user}}. Grupo: {{grupo}}</h3>
-
-    <form method="post" class="post-form" action="{%url 'consulta:retorno_designacao'%}">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Localizar" class="save btn btn-default">
-    </form>
-</div>
-
-<br>
-<a href="../../consulta/agenda/evento.ics">clique aqui</a>
-
-{% endblock %}
+    
+    <!--
+    <a href="../../consulta/agenda/evento.ics">clique aqui</a>
+    -->
+    {% endblock %}
