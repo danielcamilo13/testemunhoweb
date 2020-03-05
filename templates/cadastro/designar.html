@@ -1,0 +1,81 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <p>data da geração: {{hoje}}</p>
+    <form action="{% url 'cadastro:gerador' %}" method="post" novalidate>
+        {% csrf_token %}
+		<div>
+        <table>
+            <tr class="{% cycle 'row1' 'row2' %}">
+			<td>
+                <input type="radio" name="mes" value="1" checked>Janeiro<br>
+                <input type="radio" name="mes" value="2">Fevereiro<br>
+                <input type="radio" name="mes" value="3">Março<br>
+                <input type="radio" name="mes" value="4">Abril<br>
+                <input type="radio" name="mes" value="5">Maio<br>
+                <input type="radio" name="mes" value="6">Junho<br>
+            </td>
+                <td>
+                    <input type="radio" name="mes" value="7">Julho<br>
+                    <input type="radio" name="mes" value="8">Agosto<br>
+                    <input type="radio" name="mes" value="9">Setembro<br>
+                    <input type="radio" name="mes" value="10">Outubro<br>
+                    <input type="radio" name="mes" value="11">Novembro<br>
+                    <input type="radio" name="mes" value="12">Dezembro<br>
+                </td>
+				</tr>
+            <tr><td>
+                <input type="text" name="ano" value={{ano}} size="5">
+            </td></tr>
+                <input type="submit" value="Gerar Planilha">
+            </div>
+        </table>
+    </form>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+    <div class="module" id="recent-actions-module">
+        {% load log %}
+        {% get_admin_log 10 as admin_log for_user user %}
+        {% if not admin_log %}
+        <p>{% trans 'None available' %}</p>
+        {% else %}
+        <p>lateral</p>
+        <ul class="actionlist">
+            {% for entry in admin_log %}
+            <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+                {% if entry.is_deletion or not entry.get_admin_url %}
+                {{ entry.object_repr }}
+                {% else %}
+                <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                {% endif %}
+                <br/>
+                {% if entry.content_type %}
+                <span class="mini quiet">{% filter capfirst %}{{ entry.content_type }}{% endfilter %}</span>
+                {% else %}
+                <span class="mini quiet">{% trans 'Unknown content' %}</span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

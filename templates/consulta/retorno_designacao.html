@@ -1,0 +1,152 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static custom_export_tags %}
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static " admin /css/dashboard.css" %}" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+{% block bodyclass %}{{ block.super }}dashboard{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Publico</a></h1>
+{% endblock %}
+
+
+<script type="text/javascript"
+        src="{% static 'consulta/js/form.js' %}"
+</script>
+
+{% block content %}
+<div id="content-main">
+    {%if mensagem%}
+    {%for m in mensagem.values%}
+    <h3>Nome do irmao selecionado: {{m}}</h3>
+    {%endfor%}
+    {%endif%}
+
+    <form action="{%url 'consulta:scheduler'%}" method="post" class="post_form">
+        {%csrf_token%}
+		{%if form_filtro%}
+        <input type="submit" value="Gravar na AGENDA" class="save btn btn-default">
+		{%for lista in form_filtro%}
+        <div class="{% cycle 'row1' 'row2' %}">
+            <table>
+                <tr>
+                    {%for key,val in lista.0.items%}
+                    <td>{{key}}:</td>
+                    <td>{{val}}</td>
+                    {%endfor%}
+                    {%for key,val in lista.1.items%}
+                    <td>{{key}}:</td>
+                    <td>{{val}}</td>
+                    {%endfor%}
+                    {%for key,val in lista.2.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.3.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.4.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.5.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.6.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.7.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.8.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.9.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.10.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.11.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.12.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.13.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.14.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+                    {%for key,val in lista.15.items%}
+                    <td>{{key}}:</td>
+                    {%for v in val%}<td>{{v}}</td>{%endfor%}
+                    {%endfor%}
+
+                </tr>
+            </table>
+            {% endfor %}
+            <button value="gerar_pdf" onclick="">
+            <a href="{%url 'consulta:gerar_pdf'%}">gerar PDF</a>
+            {% endif %}
+
+            {% if form %}
+            <table>
+                <tr>
+                    <th>ano</th>
+                    <th>mes</th>
+                    <th>dia_mes</th>
+                    <th>dia_semana</th>
+                    <th>Per 1</th>
+                    <th>Per 1</th>
+                    <th>Per 1</th>
+                    <th>Per 2</th>
+                    <th>Per 2</th>
+                    <th>Per 3</th>
+                    <th>Per 3</th>
+                    <th>Per 4</th>
+                    <th>Per 4</th>
+                    <th>Per 5</th>
+                    <th>Per 5</th>
+                </tr>
+                {% for retorno in form %}
+
+                <tr>
+                    <td>{{retorno.ano}}</td>
+                    <td>{{retorno.mes}}</td>
+                    <td>{{retorno.dia_mes}}</td>
+                    <td>{{retorno.dia_semana}}</td>
+                    <td>{{retorno.p1}}</td>
+                    <td>{{retorno.p1_1}}</td>
+                    <td>{{retorno.p1_2}}</td>
+                    <td>{{retorno.p2}}</td>
+                    <td>{{retorno.p2_1}}</td>
+                    <td>{{retorno.p3}}</td>
+                    <td>{{retorno.p3_1}}</td>
+                    <td>{{retorno.p4}}</td>
+                    <td>{{retorno.p4_1}}</td>
+                    <td>{{retorno.p5}}</td>
+                    <td>{{retorno.p5_1}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            {%endif%}
+        </div>
+    </form>
+</div>
+{%endblock%}
+{% block nav-global %}{% endblock %}
+
+

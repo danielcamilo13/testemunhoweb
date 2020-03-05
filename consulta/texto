@@ -1,0 +1,156 @@
+    # dia = datetime.now()
+    # cal = Calendar()
+    # cal.add('prodid', '-//%s Events Calendar//%s//' % ('nome', 'dominio'))
+    # cal.add('version', '2.0')
+    #
+    # # site_token = site.domain.split('.')
+    # # site_token.reverse()
+    # # site_token = '.'.join(site_token)
+    #
+    # ical_event = Event()
+    # ical_event.add('summary', 'sumario')
+    # ical_event.add('dtstart', dia)
+    # ical_event.add('dtend', dia)
+    # ical_event.add('dtstamp', dia)
+    # # ical_event['uid'] = '%d.event.events.%s' % (event.id, site_token)
+    # cal.add_component(ical_event)
+    #
+    # response = httpresponse(mimetype="text/calendar")
+    # response['content-disposition']='attachment;filename=%s.ics'%event.slug
+    # return response
+
+        #def get(self,request):
+    #    dia = request.GET.get('dia_semana',None)
+    #    print(dia)
+    #    dat = {'usuario':'usuario'}
+    #    return JsonResponse(data)
+
+#def scheduler(request):
+#    context = RequestContext(request)
+#    context_dict = {}
+#    print(context)
+#    print(request)
+#    print('onde esta armazenado a sessao %s' %request.session)
+#    for p in request.POST.keys():
+#        print('meu request {}'.format(p))
+#    # Key statement needs to be added
+#    #context_dict.update(csrf(request))
+
+#    return render_to_response("consulta/retorno.html", context_dict, context)
+
+#@csrf_protect
+#@csrf_exempt
+#def scheduler(request):
+#    myDict = {k: list(request.POST.getlist(k)) for k, v in request.POST.items()}
+#    print('meu dicionario {}'.format(myDict))
+#    for v in request.POST.getlist('dia_semana'):
+#        print('%s'%v)
+#    #if request.method=='POST':
+
+#        #m = request.POST['dia_mes']
+#        #print('o mes {}'.format(m))
+#    #ics = create_ics(myDict)
+#    ics='texto'
+#    response = HttpResponse(ics, content_type='text/calendar')
+#    response['Filename'] = 'filename.ics'
+#    response['Content-Disposition'] = 'attachment; filename=filename.ics'
+#    return response
+    #
+    # ics = create_ics(thedata)
+    # output = 'saida'
+    # response = HttpResponse(output, content_type="text/calendar")
+    # response['Content-Disposition'] = 'attachment; filename=arquivo.ics'
+    # return response
+
+'''
+def scheduler(request):
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="somefilename.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['First row', 'Foo', 'Bar', 'Baz'])
+    writer.writerow(['Second row', 'A', 'B', 'C', '"Testing"', "Here's a quote"])
+
+    return response
+'''
+    # sch = EventFeed()
+    # # print(sch)
+    # # print(sch.items)
+    # # print(sch.item_description)
+    # myDict = {k: list(request.POST.getlist(k))[c] for k, v in request.POST.items() if k != 'csrfmiddlewaretoken'}
+    # print(myDict)
+    # print('produto ID: %s'%sch.product_id)
+    # # print('Items: %s'%sch.item_guid(item))
+    # print('Items {}'.format(sch.file_name))
+    #
+    # # feed = feedgenerator.ICal20Feed(
+    # #     title="My Events",
+    # #     link="http://www.example.com/events.ical",
+    # #     description="A iCalendar feed of my events.",
+    # #     language="en",)
+    # # feed.add_item(
+    # #     title='Hello',
+    # #     link='http://www.example.com/test/',
+    # #     description='Testing.',
+    # #     start_datetime = datetime(2020, 5, 6, 10, 00),
+    # #     end_datetime = datetime(2020, 5, 6, 12, 00),)
+    # # fp = open('test.ical', 'w')
+    # # feed.write(fp, 'utf-8')
+    # # fp.close()
+    #
+    # # pagina = requests.get('http://127.0.0.1:10024/admin/consulta/retorno_designacao/')
+    # # print('esta e a pagina %s' % pagina.content)
+    #
+    # if 'mes' in request.POST:
+    #     print('homenagem')
+    # if request.method=='POST':
+    #     for k,v in request.POST.items():
+    #         print('item {}'.format(k,v))
+    #         for l in request.POST.getlist(k):
+    #             print('valores dos items: %s'%l)
+    # else:
+    #     print('nao ha post')
+    # # return HttpResponse('o que vai volta')
+    #
+    #
+    # data = {'1':'valor 1','2':'valor 2'}
+    # return JsonResponse(data,safe=False)
+
+
+
+
+        #if len(data)>1:
+    #    for d in data:
+    #        if isinstance(d,dict):
+    #            start1 = data['dia']
+    #            #start1 = timezone.now()
+    #            print('descobrindo o D {}'.format(d))
+    #            print('descobrindo o tipo D {}'.format(type(d)))
+    #            #start1 = d['dia']
+    #            utc = vobject.icalendar.utc
+    #            start2 = datetime(start1.year, start1.month, start1.day, tzinfo = utc)
+    #            #start3 = data['action']
+    #            cal.add('method').value = 'PUBLISH'
+    #            vevent = cal.add('vevent')
+    #            vevent.add('dtstart').value = start2
+    #            vevent.add('dtend').value = start2
+    #            vevent.add('dtstamp').value = start2
+    #            #vevent.add('summary').value = data['action'].name
+    #            return cal.serialize()
+    #else:
+    #    #start1 = data['dia']
+    #    #start1 =data['dia']
+    #    if isinstance(data,dict):
+    #        start1 = data['dia']
+    #        utc = vobject.icalendar.utc
+    #        start2 = datetime(start1.year, start1.month, start1.day, tzinfo = utc)
+    #        #start3 = data['action']
+    #        #cal = vobject.iCalendar()
+    #        cal.add('method').value = 'PUBLISH'
+    #        vevent = cal.add('vevent')
+    #        vevent.add('dtstart').value = start2
+    #        vevent.add('dtend').value = start2
+    #        vevent.add('dtstamp').value = datetime.now()
+    #        #vevent.add('summary').value = data['action'].name
+    #        return cal.serialize()

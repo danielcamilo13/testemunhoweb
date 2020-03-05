@@ -1,0 +1,84 @@
+{% extends "../admin/base_site.html" %}
+{% load i18n static %}
+{% block title %}Testemunho Público{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Testemunho Público</a></h1>
+{% endblock %}
+
+{% block content %}
+<div id="content-main">
+    <form action="{%url 'cadastro:importar'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="file" name="file_import" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+
+        <p><button type="submit" name="import">Importar</button></p>
+    </form>
+</div>
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
+
+{% for header in result_headers %}
+<th scope="col" {{ header.class_attrib }}>
+       <div class="sortoptions">
+         <a class="sortremove" href="{{ header.url_remove }}" title="{% trans "Remove from sorting" %}"></a>
+         {% if num_sorted_fields > 1 %}<span class="sortpriority" title="{% blocktrans with priority_number=header.sort_priority %}Sorting priority: {{ priority_number }}{% endblocktrans %}">{{ header.sort_priority }}</span>{% endif %}
+         <a href="{{ header.url_toggle }}" class="toggle {% if header.ascending %}ascending{% else %}descending{% endif %}" title="{% trans "Toggle sorting" %}"></a>
+       </div>
+   <div class="text">{% if header.sortable %}<a href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span>{{ header.text|capfirst }}</span>{% endif %}</div>
+   <div class="clear"></div>
+</th>{% endfor %}
+</tr>
+</thead>
+
+    <tbody>
+    {%if context%}
+    {%for lines in context%}
+    <form action="{%url 'cadastro:gravar'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+    <tr><td colspan="{{ lines|length }}">{{ line.form.non_field_errors }}</td></tr>
+    <tr class="{% cycle 'row1' 'row2' %}">
+        {%for dia in lines %}
+		<td>{%for per in dia.values%}{{per}}{%endfor%}</td>
+        <!-- {%for per in dia.values%}<td>{{per}}</td>{%endfor%} -->
+        {% endfor %}
+    </tr>
+    {%endfor%}
+        <input type="submit" value="gravar" />
+    </form>
+    </tbody>
+</table>
+</div>
+{% endif %}
+{%endblock%}
+{% block nav-global %}{% endblock %}
+<script type="text/javascript">
+// using jQuery
+var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+// set csrf header
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+// Ajax call here
+$.ajax({
+    url:"{% url 'members:saveAccount' %}",
+    data: fd,
+    processData: false,
+    contentType: false,
+    type: 'POST',
+    success: function(data) {
+        alert(data);
+        }
+    });
+</script>

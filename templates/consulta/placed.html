@@ -1,0 +1,31 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static%}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").load("file:///C:/Daniel/projetos/testemunhoweb-projeto/testemunhoweb/templates/consulta/demo_test.txt #p1");
+  });
+});
+</script>
+</head>
+<div id="content-main">
+    {{context}}
+
+    <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+
+</div>
+{%endblock%}
